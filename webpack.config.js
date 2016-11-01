@@ -26,5 +26,8 @@ module.exports = {
     filename: 'index_bundle.js',
     path: __dirname + '/dist' 
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins:[
+    HtmlWebpackPluginConfig
+  ],
+  devtool: 'source-map'
 };
