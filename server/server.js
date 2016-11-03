@@ -1,7 +1,7 @@
-const koa = require('koa');
-const spa = require('koa-spa');
-const path = require('path');
-const app = koa();
+import koa from 'koa';
+import spa from 'koa-spa';
+import path from 'path';
+let app = koa();
 
 app.use(spa(path.join(__dirname, '../dist'),{
   index: 'index.html',
