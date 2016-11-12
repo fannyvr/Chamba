@@ -1,7 +1,11 @@
 import React from 'react';
 
-const Hello = () => (
-  <div> HELLO WORLD! </div>
-)
+class Hello extends React.Component {
+  render(){
+    return(
+      <div> Hi World </div>
+    )
+  }
+}
 
 export default Hello;
