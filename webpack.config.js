@@ -9,12 +9,12 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: process.env.NODE_ENV === 'production' ? '' : 'source-map',
   entry:[
     './app/index'
   ],
   output:{
-    path: __dirname + '/dist',
+    path: process.env.NODE_ENV === 'production' ? __dirname + '/dist' : __dirname + '/build',
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -35,7 +35,7 @@ module.exports = {
     extentions: [ '', '.js' ]
   },
   devServer: {
-    contentBase: './dist',
+    contentBase: './build',
     historyApiFallback: true,
     hot: true,
     inline: true,
