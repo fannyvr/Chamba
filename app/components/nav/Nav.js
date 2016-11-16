@@ -9,8 +9,8 @@ class Nav extends Component {
       <div className="nav"> 
         <Link to="/searchjobs" className="link"> Buscar </Link>
         <Link to="/postjobs" className="link"> Publicar </Link>
-        <Link to="/signout" className="link"> Logout </Link>
-
+        <Link to="/login" className="link"> Log In </Link>
+        <Link to="/logout" className="link"> Log Out </Link>
       </div>
     )
   }

@@ -13,8 +13,9 @@ const routes = (
     <Route path="/" component={ App } >
     <IndexRoute component={ JobsearchPage } />
     <Route path="/searchjobs" component={ JobsearchPage } />
-    <Route path="/postjobs" component={ SigninPage } />
-    <Route path="/signout" component={ SigninPage } />
+    <Route path="/postjobs" component={ PostjobsPage } />
+    <Route path="/login" component={ SigninPage } />
+    <Route path="/logout" component={ SigninPage } />
     </Route>
   </Router>
 );
