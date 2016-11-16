@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Hello from './components/Hello';
+
+import routes from './components/routes/Routes';
 
 
-render( <Hello />, document.getElementById('app') )
+render( routes, document.getElementById('app') )
