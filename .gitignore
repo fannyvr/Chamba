@@ -6,3 +6,4 @@ build
 bower_components
 notes.js
 tasks.js
+.env
