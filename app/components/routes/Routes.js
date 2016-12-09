@@ -5,15 +5,22 @@ import App from '../app/App';
 import SigninPage from '../signin/signinPage';
 import PostjobsPage from '../post/PostjobsPage';
 import JobsearchPage from '../search/JobsearchPage';
+import AuthService from '../../utils/authService';
 
+const auth = new AuthService('string', 'string');
 
-//TODO: check auth '/postjobs' redirect to signin if not signed in or Post form
+const requireAuth = (nextState, replace)=>{
+  if( !auth.loggedIn() ){
+    replace({pathname:'/login'})
+  }
+};
+
 const routes = (
   <Router history={ browserHistory } >
     <Route path="/" component={ App } >
     <IndexRoute component={ JobsearchPage } />
     <Route path="/searchjobs" component={ JobsearchPage } />
-    <Route path="/postjobs" component={ PostjobsPage } />
+    <Route path="/postjobs" component={ PostjobsPage } onEnter={ requireAuth } />
     <Route path="/login" component={ SigninPage } />
     <Route path="/logout" component={ SigninPage } />
     </Route>
