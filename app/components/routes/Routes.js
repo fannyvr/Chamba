@@ -15,6 +15,10 @@ const requireAuth = (nextState, replace)=>{
   }
 };
 
+const logout = () => {
+  return auth.logout();
+}
+
 const routes = (
   <Router history={ browserHistory } >
     <Route path="/" component={ App } >
@@ -22,7 +26,7 @@ const routes = (
     <Route path="/searchjobs" component={ JobsearchPage } />
     <Route path="/postjobs" component={ PostjobsPage } onEnter={ requireAuth } />
     <Route path="/login" component={ SigninPage } />
-    <Route path="/logout" component={ SigninPage } />
+    <Route path="/logout" component={ SigninPage } onEnter={ logout } />
     </Route>
   </Router>
 );
