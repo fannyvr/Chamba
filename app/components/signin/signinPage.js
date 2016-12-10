@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import AuthService from '../../utils/authService';
+import config from '../../../config';
 
 class SinginPage extends Component {
  
   render(){
-    const auth = new AuthService('string', 'string');
+    const auth = new AuthService(config.AUTH0_CLIENT_ID, config.DOMAIN);
 
     return(
       <div>

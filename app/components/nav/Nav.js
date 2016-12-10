@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 import AuthService from '../../utils/authService';
+import config from '../../../config';
 import './nav.css';
 
-
-const auth = new AuthService('string', 'string');
+const auth = new AuthService(config.AUTH0_CLIENT_ID, config.DOMAIN);
 
 class Nav extends Component {
   render(){
