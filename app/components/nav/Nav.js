@@ -9,18 +9,12 @@ const auth = new AuthService(config.AUTH0_CLIENT_ID, config.DOMAIN);
 
 class Nav extends Component {
   render(){
-    const show = () => {
-      if(auth.loggedIn()){
-        return <Link to="/logout" className="link"> Log Out </Link>;
-      } 
-      return <Link to="/login" className="link"> Log In </Link>;
-    };
-
     return(
       <div className="nav"> 
         <Link to="/searchjobs" className="link"> Buscar </Link>
         <Link to="/postjobs" className="link"> Publicar </Link>
-        { show() }  
+        { auth.loggedIn() && <Link to="/logout" className="link"> Log Out </Link> }
+        { !auth.loggedIn() && <Link to="/login" className="link"> Log In </Link> }  
       </div>
     );
   }
