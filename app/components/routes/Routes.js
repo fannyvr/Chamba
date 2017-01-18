@@ -5,10 +5,8 @@ import App from '../app/App';
 import SigninPage from '../signin/signinPage';
 import PostjobsPage from '../post/PostjobsPage';
 import JobsearchPage from '../search/JobsearchPage';
-import AuthService from '../../utils/authService';
+import auth from '../../utils/authInstance';
 import config from '../../../config';
-
-const auth = new AuthService(config.AUTH0_CLIENT_ID, config.DOMAIN);
 
 const requireAuth = (nextState, replace)=>{
   if( !auth.loggedIn() ){
