@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 import auth from '../../utils/authInstance';
-import config from '../../../config';
 import './nav.css';
 
 
