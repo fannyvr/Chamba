@@ -6,7 +6,6 @@ import SigninPage from '../signin/signinPage';
 import PostjobsPage from '../post/PostjobsPage';
 import JobsearchPage from '../search/JobsearchPage';
 import auth from '../../utils/authInstance';
-import config from '../../../config';
 
 const requireAuth = (nextState, replace)=>{
   if( !auth.loggedIn() ){
