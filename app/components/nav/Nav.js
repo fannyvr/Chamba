@@ -11,6 +11,7 @@ class Nav extends Component {
       <div className="nav"> 
         <Link to="/searchjobs" className="link"> Buscar </Link>
         <Link to="/postjobs" className="link"> Publicar </Link>
+        { auth.loggedIn() && <Link to="/myposts" className="link"> Mis Publicados </Link> }
         { auth.loggedIn() && <Link to="/logout" className="link"> Log Out </Link> }
         { !auth.loggedIn() && <Link to="/login" className="link"> Log In </Link> }  
       </div>
