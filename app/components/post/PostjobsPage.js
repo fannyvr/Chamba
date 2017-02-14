@@ -4,21 +4,14 @@ function Post(props) {
   return(
     <div> 
       <h1>POST</h1>
-      <form>
-        Title: <br /> 
-        <input type="text" value={props.title} onChange={props.onChange('title')}/> <br />
-        Category: <br /> 
-        <input type="text" value={props.category} onChange={props.onChange('category')}  /> <br />
-        Hourly Salary: <br /> 
-        <input type="text" value={props.salary} onChange={props.onChange('salary')} /> <br />
-        Position: <br /> 
-        <input type="text" value={props.position} onChange={props.onChange('position')} /> <br />
-        Job Description: <br />
-         <input type="text" value={props.description} onChange={props.onChange('description')} /> <br />
-        Contact Info: <br /> 
-        <input type="text" value={props.contact} onChange={props.onChange('contact')} /> <br />
-        Aplication: <br /> 
-        <input type="text" value={props.application} onChange={props.onChange('application')} /> <br />
+      <form onChange={props.onChange}>
+        Title: <br /> <input type="text" name="title" value={props.title} /> <br />
+        Category: <br /> <input type="text" name="category" value={props.category} /> <br />
+        Hourly Salary: <br /> <input type="text" name="salary" value={props.salary} /> <br />
+        Position: <br /> <input type="text" name="position" value={props.position} /> <br />
+        Job Description: <br /> <input type="text" name="description" value={props.description} /> <br />
+        Contact Info: <br /> <input type="text" name="contact" value={props.contact} /> <br />
+        Aplication: <br /> <input type="text" name="application"  value={props.application} /> <br />
         
         <button onClick={props.onEnter}> Post </button>
         <button> Cancel </button>
