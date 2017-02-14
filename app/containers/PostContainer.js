@@ -18,15 +18,14 @@ class PostContainer extends Component {
   }
 
   handleEnter(event){
+    console.log(this.state)
     event.preventDefault();
   }
 
-  handleChange(keyword){
-    return (e) => {
-      const state = {};
-      state[keyword] = e.target.value
-      this.setState( state )  
-    }
+  handleChange(event){
+    const value = event.target.value;
+    const name = event.target.name;
+    this.setState( { [name]: value } )
   }
 
   render(){
