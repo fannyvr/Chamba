@@ -14,6 +14,11 @@ class PostContainer extends Component {
       application: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);
+  }
+
+  handleEnter(event){
+    event.preventDefault();
   }
 
   handleChange(keyword){
