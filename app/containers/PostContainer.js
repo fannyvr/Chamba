@@ -13,7 +13,17 @@ class PostContainer extends Component {
       contact: '',
       application: ''
     };
-}
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(keyword){
+    return (e) => {
+      const state = {};
+      state[keyword] = e.target.value
+      this.setState( state )  
+    }
+  }
+
   render(){
     return (
       <div> 
