@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './postJobsPage.css';
 
 function Post(props) {
   return(
