@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PostJobsPage from '../components/post/PostJobsPage';
+import { postJob } from '../actions/actions';
 
 class PostContainer extends Component {
   constructor() {
@@ -18,8 +20,8 @@ class PostContainer extends Component {
   }
 
   handleEnter(event){
-    console.log(this.state)
     event.preventDefault();
+    this.props.dispatch(postJob(this.state))
   }
 
   handleChange(event){
@@ -46,7 +48,7 @@ class PostContainer extends Component {
   }
 }
 
-export default PostContainer;
+export default connect()(PostContainer);
 
 
 
