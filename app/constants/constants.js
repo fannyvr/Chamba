@@ -1,1 +1,1 @@
-export const ADD_JOB = 'ADD_JOB';
+export const POST_JOB = 'POST_JOB';
