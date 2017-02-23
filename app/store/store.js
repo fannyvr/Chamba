@@ -1,12 +1,15 @@
-import { createStore, applyMiddleware, compose} from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import { jobs } from '../reducers/reducers';
+import { createStore, applyMiddleware, compose} from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import allReducers  from '../reducers/reducers';
+
 
 let store = createStore(
-  jobs, 
-  [ 'Post Jobs' ], 
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  allReducers,
+  compose(
+    applyMiddleware(thunkMiddleware),
+    window.devToolsExtension ? window.devToolsExtension() : undefined
   )
+)
 
 
 export default store;
