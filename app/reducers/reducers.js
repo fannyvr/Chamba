@@ -1,6 +1,7 @@
+import { combineReducers } from 'redux';
 import * as constants from '../constants/constants';
 
-export  function jobs(state = [], action) {
+ function jobs(state = [], action) {
   switch (action.type) {
     case constants.POST_JOB:
       return [
@@ -13,3 +14,9 @@ export  function jobs(state = [], action) {
       return state
   }
 }
+
+const allReducers = combineReducers({
+  jobs
+});
+
+export default allReducers;
