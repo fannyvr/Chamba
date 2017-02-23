@@ -48,7 +48,11 @@ class PostContainer extends Component {
   }
 }
 
-export default connect()(PostContainer);
+function mapStateToProps(state){
+  return { jobs : state.jobs }
+}
+
+export default connect(mapStateToProps)(PostContainer);
 
 
 
