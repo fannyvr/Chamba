@@ -6,9 +6,8 @@ import * as constants from '../constants/constants';
     case constants.POST_JOB:
       return [
         ...state,
-        {
-          text: action.state
-        }
+        action.state
+        
       ]
     default:
       return state
