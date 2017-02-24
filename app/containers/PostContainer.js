@@ -22,6 +22,10 @@ class PostContainer extends Component {
   handleEnter(event){
     event.preventDefault();
     this.props.dispatch(postJob(this.state))
+    
+    for(var key in this.state){
+      this.setState({ [key]: ' ' })
+    }
   }
 
   handleChange(event){
