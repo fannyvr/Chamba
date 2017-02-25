@@ -10,7 +10,7 @@ function JobSearch(props){
       
       {props.jobs.map((job, index) =>(
         <div key={index}>
-          <Link to="/jobdetails" > { job.title } </Link>
+          <a onClick={props.onClick}> {job.title} </a>
         </div>))}
     </div>
   )
