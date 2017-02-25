@@ -28,6 +28,7 @@ const routes = (
     <Route path="/myposts" component={ MyPostedJobsPage } onEnter={ requireAuth } />
     <Route path="/login" component={ SigninPage } />
     <Route path="/logout" component={ SigninPage } onEnter={ logout } />
+    <Route path="/jobdetails" component={ JobDetailsPage }/>
     </Route>
   </Router>
 );
