@@ -8,10 +8,12 @@ function JobSearch(props){
     <div> 
       <h1>JOBS</h1>
       <ul>
-      {props.jobs.map((job, index) =>(
-        <li key={index}>
-          <a onClick={props.onClick}> {job.title} </a>
-        </li>))}
+        {props.jobs.map((job, index) =>(
+          <li key={index}
+          onClick={() => props.onClick(job)} 
+          >
+            {job.title} 
+          </li>))}
       </ul>
     </div>
   )
