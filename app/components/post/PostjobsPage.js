@@ -18,7 +18,7 @@ function Post(props) {
         <button> Cancel </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default Post;

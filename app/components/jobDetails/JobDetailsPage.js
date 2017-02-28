@@ -11,7 +11,7 @@ function JobDetails (props){
         <div>{props.clickedJobOnSearch.contact}</div>
         <div>{props.clickedJobOnSearch.application}</div>
       </div>
-    )
+    );
 };
 
 export default JobDetails;

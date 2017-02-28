@@ -17,7 +17,7 @@ const requireAuth = (nextState, replace)=>{
 
 const logout = () => {
   return auth.logout();
-}
+};
 
 const routes = (
   <Router history={ browserHistory } >

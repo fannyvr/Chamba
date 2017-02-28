@@ -23,17 +23,17 @@ class JobSearchContainer extends Component{
     return(
       <JobSearchPage jobs={this.props.jobs}
                      onClick={this.handleClick} />
-    )
+    );
   }
-}
+};
 
 function mapStateToProps(state){
-  return { jobs: state.jobs }
-}
+  return { jobs: state.jobs };
+};
 
 function matchDispatchToProps(dispatch){
   return bindActionCreators({clickedJob: clickedJob}, dispatch);
-}
+};
 
 export default connect(mapStateToProps, matchDispatchToProps)(JobSearchContainer);
 

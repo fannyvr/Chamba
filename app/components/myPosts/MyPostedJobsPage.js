@@ -6,8 +6,8 @@ class MyPosts extends Component {
       <div>
         <h1> List of Posted Jobs </h1>
       </div>
-    )
+    );
   }
-}
+};
 
 export default MyPosts;

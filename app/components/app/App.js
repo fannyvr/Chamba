@@ -9,8 +9,8 @@ class App extends Component {
         <Nav />
         { this.props.children }
       </div>
-    )
+    );
   }
-}
+};
 
-export default App
+export default App;

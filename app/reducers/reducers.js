@@ -11,7 +11,7 @@ import * as constants from '../constants/constants';
     default:
       return state
   }
-}
+};
 
 
 function clickedJobOnSearch(state = {}, action){
@@ -21,7 +21,7 @@ function clickedJobOnSearch(state = {}, action){
     default: 
       return state
   }
-}
+};
 
 const allReducers = combineReducers({
   jobs,

@@ -21,15 +21,15 @@ export default class AuthService {
   }
 
   login(){
-    this.lock.show()
+    this.lock.show();
   }
 
   loggedIn(){
-    return !!this.getToken()
+    return !!this.getToken();
   }
 
   setToken(idToken){
-    localStorage.setItem('id_token', idToken)
+    localStorage.setItem('id_token', idToken);
   }
 
   getToken(){

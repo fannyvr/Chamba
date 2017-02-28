@@ -16,8 +16,8 @@ function JobSearch(props){
           </li>))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
 
 export default JobSearch;

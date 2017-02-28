@@ -48,13 +48,13 @@ class PostContainer extends Component {
                       application={this.state.application}                    
                       />
       </div>
-    )
+    );
   }
-}
+};
 
 function mapStateToProps(state){
   return { jobs : state.jobs }
-}
+};
 
 export default connect(mapStateToProps)(PostContainer);
 
