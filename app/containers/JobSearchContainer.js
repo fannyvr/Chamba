@@ -15,8 +15,8 @@ class JobSearchContainer extends Component{
   }
 
   handleClick(job){
-    this.props.clickedJob(job)
-    browserHistory.push('/jobdetails')
+    this.props.clickedJob(job);
+    browserHistory.push('/jobdetails');
   }
 
   render(){

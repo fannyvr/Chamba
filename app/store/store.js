@@ -9,7 +9,7 @@ let store = createStore(
     applyMiddleware(thunkMiddleware),
     window.devToolsExtension ? window.devToolsExtension() : undefined
   )
-)
+);
 
 
 export default store;

@@ -21,7 +21,7 @@ class PostContainer extends Component {
 
   handleEnter(event){
     event.preventDefault();
-    this.props.dispatch(postJob(this.state))
+    this.props.dispatch(postJob(this.state));
     
     for(var key in this.state){
       this.setState({ [key]: ' ' })
@@ -31,7 +31,7 @@ class PostContainer extends Component {
   handleChange(event){
     const value = event.target.value;
     const name = event.target.name;
-    this.setState( { [name]: value } )
+    this.setState( { [name]: value } );
   }
 
   render(){
@@ -53,7 +53,7 @@ class PostContainer extends Component {
 };
 
 function mapStateToProps(state){
-  return { jobs : state.jobs }
+  return { jobs : state.jobs };
 };
 
 export default connect(mapStateToProps)(PostContainer);

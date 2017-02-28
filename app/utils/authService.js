@@ -9,15 +9,15 @@ export default class AuthService {
         redirectUrl: 'http://localhost:3000/login',
         responseType: 'token'
       }
-    })
+    });
 
-    this.lock.on('authenticated', this._doAuthentication.bind(this))
-    this.login = this.login.bind(this)
+    this.lock.on('authenticated', this._doAuthentication.bind(this));
+    this.login = this.login.bind(this);
   }
 
   _doAuthentication(authResult){
-    this.setToken(authResult.idToken)
-    browserHistory.replace('/postjobs')
+    this.setToken(authResult.idToken);
+    browserHistory.replace('/postjobs');
   }
 
   login(){
