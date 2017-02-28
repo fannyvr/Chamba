@@ -6,20 +6,20 @@ class JobDetails extends Component{
   render(){
     return(
       <div>
-        <div>{this.props.activeJob.title}</div>
-        <div>{this.props.activeJob.category}</div>
-        <div>{this.props.activeJob.salary}</div>
-        <div>{this.props.activeJob.position}</div>
-        <div>{this.props.activeJob.description}</div>
-        <div>{this.props.activeJob.contact}</div>
-        <div>{this.props.activeJob.application}</div>
+        <div>{this.props.clickedJobOnSearch.title}</div>
+        <div>{this.props.clickedJobOnSearch.category}</div>
+        <div>{this.props.clickedJobOnSearch.salary}</div>
+        <div>{this.props.clickedJobOnSearch.position}</div>
+        <div>{this.props.clickedJobOnSearch.description}</div>
+        <div>{this.props.clickedJobOnSearch.contact}</div>
+        <div>{this.props.clickedJobOnSearch.application}</div>
       </div>
     )
   }
 };
 
 function mapStateToProps(state){
-  return { activeJob: state.activeSearchJob }
+  return { clickedJobOnSearch: state.clickedJobOnSearch }
 }
 
 export default connect(mapStateToProps)(JobDetails);
