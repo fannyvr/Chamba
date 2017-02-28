@@ -14,7 +14,7 @@ import * as constants from '../constants/constants';
 }
 
 
-function activeSearchJob(state = {}, action){
+function clickedJobOnSearch(state = {}, action){
   switch(action.type){
     case constants.CLICKED_JOB:
       return action.payload
@@ -25,7 +25,7 @@ function activeSearchJob(state = {}, action){
 
 const allReducers = combineReducers({
   jobs,
-  activeSearchJob
+  clickedJobOnSearch
 });
 
 export default allReducers;
