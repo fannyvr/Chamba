@@ -5,6 +5,5 @@ export function postJob(job) {
 }
 
 export function clickedJob(job) {
-  console.log('you clicked on:', job.title)
   return { type: constants.CLICKED_JOB, payload: job }
 }
