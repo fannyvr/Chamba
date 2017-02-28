@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 
+import './jobDetails.css';
+
 function JobDetails (props){
     return(
       <div>
-        <div>{props.clickedJobOnSearch.title}</div>
-        <div>{props.clickedJobOnSearch.category}</div>
-        <div>{props.clickedJobOnSearch.salary}</div>
-        <div>{props.clickedJobOnSearch.position}</div>
-        <div>{props.clickedJobOnSearch.description}</div>
-        <div>{props.clickedJobOnSearch.contact}</div>
-        <div>{props.clickedJobOnSearch.application}</div>
+        <div id="title"> {props.clickedJobOnSearch.title} </div>
+        <div id="category"> {props.clickedJobOnSearch.category} </div>
+        <div id="salary"> {props.clickedJobOnSearch.salary} </div>
+        <div id="position"> {props.clickedJobOnSearch.position} </div>
+        <div id="description"> {props.clickedJobOnSearch.description} </div>
+        <div id="contact"> {props.clickedJobOnSearch.contact} </div>
+        <div id="application"> {props.clickedJobOnSearch.application} </div>
       </div>
     );
 };
