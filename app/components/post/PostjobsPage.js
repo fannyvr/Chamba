@@ -10,7 +10,7 @@ function Post(props) {
         Category: <br /> <input type="text" name="category" value={props.category} /> <br />
         Hourly Salary: <br /> <input type="text" name="salary" value={props.salary} /> <br />
         Position: <br /> <input type="text" name="position" value={props.position} /> <br />
-        Job Description: <br /> <input type="text" name="description" value={props.description} /> <br />
+        Job Description: <br /> <textarea type="text" name="description" value={props.description} /> <br />
         Contact Info: <br /> <input type="text" name="contact" value={props.contact} /> <br />
         Aplication: <br /> <input type="text" name="application"  value={props.application} /> <br />
         
