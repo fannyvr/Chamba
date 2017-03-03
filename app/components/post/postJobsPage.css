@@ -1,14 +1,15 @@
 form {
-  width: 1100px;
+  width: 1200px;
   position: relative;
-  margin: 0 absolute;
+  margin: 0 auto;
 }
 
 textarea {
-  width: 100%;
+  width: 1060px;
   height: 150px;
   box-sizing: border-box;
   resize: none;
+  margin: 0 auto;
 }
 
 textarea:focus {
@@ -31,19 +32,18 @@ input[name=salary] {
 
 .details {
   float:left;
+  padding-left: 70px;
+  padding-right: 0;
 }
 
-#description {
-  padding-left: 30px;
+#description{
+  padding-left: 70px;
 }
-
 #description, .details {
   font-weight: bold;
   font-size: 18px;
-  padding-top: 30px; 
-  padding-left: 30px;
-  padding-bottom: 30px;
-  padding-right: 35px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 button {
