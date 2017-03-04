@@ -36,9 +36,10 @@ input[name=salary] {
   padding-right: 0;
 }
 
-#description{
+#description {
   padding-left: 70px;
 }
+
 #description, .details {
   font-weight: bold;
   font-size: 18px;
@@ -47,8 +48,12 @@ input[name=salary] {
 }
 
 button {
+  float: left;
+  position: relative;
+  top: -13px;
+  left: 190px;
   font-size: 20px;
-  padding: 10px 30px;
+  padding: 14px 30px;
   margin: 55px 30px;
   border: none;
   background-color: #333;
