@@ -47,7 +47,7 @@ input[name=salary] {
   padding-top: 20px;
 }
 
-button {
+.postButton, .cancelButton {
   float: left;
   position: relative;
   top: -13px;
@@ -61,7 +61,7 @@ button {
   outline: none;
 }
 
-button:hover {
+.postButton:hover, .cancelButton:hover {
     background-color: grey;
     color: white;
 }
