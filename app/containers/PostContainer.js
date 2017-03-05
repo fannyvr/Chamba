@@ -17,6 +17,7 @@ class PostContainer extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   handleEnter(event){
@@ -24,7 +25,7 @@ class PostContainer extends Component {
     this.props.dispatch(postJob(this.state));
     
     for(var key in this.state){
-      this.setState({ [key]: ' ' })
+      this.setState({ [key]: ' ' });
     }
   }
 
@@ -34,18 +35,27 @@ class PostContainer extends Component {
     this.setState( { [name]: value } );
   }
 
+  handleCancel(event){
+    event.preventDefault();
+    
+    for(var key in this.state){
+      this.setState({ [key]: ' ' });
+    }
+  }
+
   render(){
     return (
       <div> 
         <PostJobsPage onChange={this.handleChange} 
                       onEnter={this.handleEnter}
+                      onCancel={this.handleCancel}
                       title={this.state.title}
                       category={this.state.category}
                       salary={this.state.salary}
                       position={this.state.position}
                       description={this.state.description}
                       contact={this.state.contact}
-                      application={this.state.application}                    
+                      application={this.state.application}                
                       />
       </div>
     );
