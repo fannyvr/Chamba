@@ -14,8 +14,8 @@ function Post(props) {
         <div className="details"> Contact Info: <br/> <input type="text" name="contact" value={props.contact} /> <br/> </div>
         <div className="details"> Aplication: <br/> <input type="text" name="application"  value={props.application} /> <br/> </div>
         
-        <button className="postButton" onClick={props.onEnter}> Post </button>
-        <button className="cancelButton"> Cancel </button>
+        <button type="button" className="postButton" onClick={props.onEnter}> Post </button>
+        <button type="button" className="cancelButton" onClick={props.onCancel}> Cancel </button>
       </form>
     </div>
   );
