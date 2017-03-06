@@ -6,7 +6,7 @@ function Post(props) {
     <div> 
       <h1>POST</h1>
       <form onChange={props.onChange}>
-        <div className="details"> Title: <br/> <input type="text" name="title" value={props.title} /> <br/> </div>
+        <div className="details"> Title: <br/> <input type="text" name="title" value={props.title} required={props.req}/> <br/> </div>
         <div className="details"> Category: <br/> <input type="text" name="category" value={props.category} /> <br/> </div>
         <div className="details"> Hourly Salary: <br/> <input type="text" name="salary" value={props.salary} /> <br/> </div>
         <div className="details"> Position: <br/> <input type="text" name="position" value={props.position} /> <br/> </div>
