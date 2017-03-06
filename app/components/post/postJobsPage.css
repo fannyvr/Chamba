@@ -30,6 +30,11 @@ input[name=salary] {
   width: 90px;
 }
 
+input:required{
+   background: red;
+}
+
+
 .details {
   float:left;
   padding-left: 70px;
