@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PostJobsPage from '../components/post/PostJobsPage';
 import { postJob } from '../actions/actions';
 
+
 class PostContainer extends Component {
   constructor() {
     super();
@@ -13,7 +14,8 @@ class PostContainer extends Component {
       position: '',
       description: '',
       contact: '',
-      application: ''
+      application: '',
+      required: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
@@ -24,16 +26,23 @@ class PostContainer extends Component {
     event.preventDefault();
     
     for(var key in this.state){
-      this.setState({ [key]: ' ' });
+      if(key === 'required'){
+        this.setState({ [key]: false });
+      }else{
+        this.setState({ [key]: '' });
+      }
     }
   }
 
   handleEnter(event){
-    this.clearForm(event);
+    if(this.state.title === ''){
+      return this.setState({required: 'required'});
+    }
     this.props.dispatch(postJob(this.state));
+    this.clearForm(event);
   }
 
-  handleChange(event){
+  handleChange(event){ 
     const value = event.target.value;
     const name = event.target.name;
     this.setState( { [name]: value } );
@@ -55,7 +64,8 @@ class PostContainer extends Component {
                       position={this.state.position}
                       description={this.state.description}
                       contact={this.state.contact}
-                      application={this.state.application}                
+                      application={this.state.application}
+                      req={this.state.required}                
                       />
       </div>
     );
