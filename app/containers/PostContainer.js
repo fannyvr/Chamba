@@ -14,8 +14,7 @@ class PostContainer extends Component {
       position: '',
       description: '',
       contact: '',
-      application: '',
-      required: false
+      application: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
@@ -26,18 +25,11 @@ class PostContainer extends Component {
     event.preventDefault();
     
     for(var key in this.state){
-      if(key === 'required'){
-        this.setState({ [key]: false });
-      }else{
-        this.setState({ [key]: '' });
-      }
+      this.setState({ [key]: '' });
     }
   }
 
   handleEnter(event){
-    if(this.state.title === ''){
-      return this.setState({required: 'required'});
-    }
     this.props.dispatch(postJob(this.state));
     this.clearForm(event);
   }
@@ -64,8 +56,7 @@ class PostContainer extends Component {
                       position={this.state.position}
                       description={this.state.description}
                       contact={this.state.contact}
-                      application={this.state.application}
-                      req={this.state.required}                
+                      application={this.state.application}              
                       />
       </div>
     );
