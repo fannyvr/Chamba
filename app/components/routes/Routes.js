@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute, browserHistory  } from 'react-router';
 
 import App from '../app/App';
 import SigninPage from '../signin/signinPage';
-import MyPostedJobsPage from '../myposts/MyPostedJobsPage';
+import MyPostsContainer from '../../containers/MyPostsContainer';
 import JobDetailsContainer from '../../containers/JobDetailsContainer';
 import PostContainer from '../../containers/PostContainer';
 import JobsearchContainer from '../../containers/JobsearchContainer';
@@ -27,7 +27,7 @@ const routes = (
     <Route path="/logout" component={ SigninPage } onEnter={ logout } />
     <Route path="/searchjobs" component={ JobsearchContainer } />
     <Route path="/postjobs" component={ PostContainer } onEnter={ requireAuth } />
-    <Route path="/myposts" component={ MyPostedJobsPage } onEnter={ requireAuth } />
+    <Route path="/myposts" component={ MyPostsContainer } onEnter={ requireAuth } />
     <Route path="/jobdetails" component={ JobDetailsContainer }/>
     </Route>
   </Router>
