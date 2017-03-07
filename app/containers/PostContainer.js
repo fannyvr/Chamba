@@ -24,17 +24,10 @@ class PostContainer extends Component {
     this.handleCancel = this.handleCancel.bind(this);
   }
 
-  clearForm(event){
-    event.preventDefault();
-    
-    for(var key in this.state){
-      this.setState({ [key]: '' });
-    }
-  }
-
   handleEnter(event){
+    event.preventDefault();
     this.props.postJob(this.state);
-    this.clearForm(event);
+    browserHistory.push('/myposts');
   }
 
   handleChange(event){ 
@@ -44,7 +37,11 @@ class PostContainer extends Component {
   }
 
   handleCancel(event){
-    this.clearForm(event);
+    event.preventDefault();
+    
+    for(var key in this.state){
+      this.setState({ [key]: '' });
+    }
   }
 
   render(){
