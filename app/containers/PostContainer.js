@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
+import { bindActionCreators } from 'redux';
+
 import PostJobsPage from '../components/post/PostJobsPage';
 import { postJob } from '../actions/actions';
 
@@ -30,7 +33,7 @@ class PostContainer extends Component {
   }
 
   handleEnter(event){
-    this.props.dispatch(postJob(this.state));
+    this.props.postJob(this.state);
     this.clearForm(event);
   }
 
@@ -67,7 +70,11 @@ function mapStateToProps(state){
   return { jobs : state.jobs };
 };
 
-export default connect(mapStateToProps)(PostContainer);
+function matchDispatchToProps(dispatch){
+  return bindActionCreators({ postJob : postJob }, dispatch);
+};
+
+export default connect(mapStateToProps, matchDispatchToProps)(PostContainer);
 
 
 
