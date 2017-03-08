@@ -10,7 +10,3 @@
 .searchBullet:hover{
   color: red;
 }
-
-.searchBullet:focus{
-  background: green;
-}
