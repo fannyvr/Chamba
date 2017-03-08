@@ -1,12 +1,14 @@
 import React from 'react';
 
+import './myPostsPage.css';
+
 function MyPosts(props){
   return(
     <div>
       <h1> My Posts </h1>
-        <ul>
+        <ul id="postsList">
           {props.jobs.map((job, index)=>(
-            <li key={index} onClick={()=>props.onClick(job)}> 
+            <li className="postItem" key={index} onClick={()=>props.onClick(job)}> 
               {job.title} 
             </li>
           ))}

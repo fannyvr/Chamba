@@ -1,0 +1,12 @@
+#postsList{
+  list-style: none;
+}
+
+.postItem{
+  padding: 10px;
+  font-size: 20px;
+}
+
+.postItem:hover{
+  color: blue;
+}
