@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router';
 
-import JobDetailsPage from '../jobDetails/JobDetailsPage';
+import './jobSearchPage.css';
 
 function JobSearch(props){
   return(
     <div> 
       <h1>JOBS</h1>
-      <ul>
+      <ul id="searchList">
         {props.jobs.map((job, index) =>(
-          <li key={index}
+          <li className="searchBullet" key={index}
           onClick={() => props.onClick(job)} 
           >
             {job.title} 
