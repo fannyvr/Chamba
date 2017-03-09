@@ -30,15 +30,18 @@ input[name=salary] {
   width: 90px;
 }
 
+
 .details {
   float:left;
   padding-left: 70px;
-  padding-right: 0;
+  padding-right: 5px;
 }
 
 #description {
+  clear: left;
   padding-left: 70px;
 }
+
 
 #description, .details {
   font-weight: bold;
@@ -65,5 +68,4 @@ input[name=salary] {
     background-color: grey;
     color: white;
 }
-
 
