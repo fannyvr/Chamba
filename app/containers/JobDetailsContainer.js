@@ -6,9 +6,11 @@ import JobDetailsPage from '../components/jobDetails/JobDetailsPage';
 
 class JobDetailsContainer extends Component{
   render(){
+    const job = this.props.clickedJobOnSearch;
+      
     return(
       <div> 
-        <JobDetailsPage clickedJobOnSearch={this.props.clickedJobOnSearch}/> 
+        <JobDetailsPage clickedJobOnSearch={job}/> 
       </div>
     );
   }
