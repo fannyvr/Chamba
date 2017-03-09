@@ -9,10 +9,10 @@ function JobDetails (props){
       <div id="title"> { job.title } </div>
         <div id="jposition" className="detail"> <b> Position: </b> <br/> { job.position } </div>
         <div id="jsalary" className="detail"> <b> Salary: </b> <br/> { job.salary } </div>
-        <div id="jcategory" className="detail"> <b> Category: </b> <br/> { job.category } </div>
+        { job.category.length > 0 && <div id="jcategory" className="detail"> <b> Category: </b> <br/> { job.category } </div> }
         <div id="jdescription"> <b> Description: </b> <br/> { job.description } </div>
         <div id="jcontact" className="detail"> <b> Contact: </b> <br/> { job.contact } </div>
-        <div id="japplication" className="detail"> <b> Application: </b> <br/> { job.application } </div>
+        { job.application.length > 0 && <div id="japplication" className="detail"> <b> Application: </b> <br/> { job.application } </div> }
     </div>
   );
 };
