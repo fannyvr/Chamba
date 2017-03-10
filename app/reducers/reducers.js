@@ -9,7 +9,7 @@ import * as constants from '../constants/constants';
         action.payload
       ]
     default:
-      return state
+      return state;
   }
 };
 
@@ -19,7 +19,7 @@ function clickedJobOnSearch(state = {}, action){
     case constants.CLICKED_JOB:
       return action.payload
     default: 
-      return state
+      return state;
   }
 };
 

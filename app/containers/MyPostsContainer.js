@@ -22,19 +22,20 @@ class MyPostsContainer extends Component{
   render(){
     return(
       <div>
-        <MyPostsPage jobs={this.props.jobs}
-                     onClick={this.handleClick}/>
+        <MyPostsPage jobs={ this.props.jobs }
+                     onClick={ this.handleClick } 
+        />
       </div>
     );
   };
 };
 
 function mapStateToProps(state){
-  return {jobs: state.jobs}
+  return { jobs: state.jobs }
 };
 
 function matchDispatchToProps(dispatch){
-  return bindActionCreators({clickedJob: clickedJob}, dispatch)
+  return bindActionCreators({ clickedJob: clickedJob }, dispatch)
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(MyPostsContainer);
+export default connect( mapStateToProps, matchDispatchToProps )( MyPostsContainer );

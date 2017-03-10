@@ -21,8 +21,9 @@ class JobSearchContainer extends Component{
 
   render(){
     return(
-      <JobSearchPage jobs={this.props.jobs}
-                     onClick={this.handleClick} />
+      <JobSearchPage jobs={ this.props.jobs }
+                     onClick={ this.handleClick } 
+      />
     );
   }
 };
@@ -32,8 +33,8 @@ function mapStateToProps(state){
 };
 
 function matchDispatchToProps(dispatch){
-  return bindActionCreators({clickedJob: clickedJob}, dispatch);
+  return bindActionCreators({ clickedJob: clickedJob }, dispatch);
 };
 
-export default connect(mapStateToProps, matchDispatchToProps)(JobSearchContainer);
+export default connect( mapStateToProps, matchDispatchToProps )( JobSearchContainer );
 

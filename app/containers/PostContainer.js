@@ -47,17 +47,17 @@ class PostContainer extends Component {
   render(){
     return (
       <div> 
-        <PostJobsPage onChange={this.handleChange} 
-                      onEnter={this.handleEnter}
-                      onCancel={this.handleCancel}
-                      title={this.state.title}
-                      category={this.state.category}
-                      salary={this.state.salary}
-                      position={this.state.position}
-                      description={this.state.description}
-                      contact={this.state.contact}
-                      application={this.state.application}              
-                      />
+        <PostJobsPage onChange={ this.handleChange } 
+                      onEnter={ this.handleEnter }
+                      onCancel={ this.handleCancel }
+                      title={ this.state.title }
+                      category={ this.state.category }
+                      salary={ this.state.salary }
+                      position={ this.state.position }
+                      description={ this.state.description }
+                      contact={ this.state.contact }
+                      application={ this.state.application }              
+        />
       </div>
     );
   }
@@ -71,7 +71,7 @@ function matchDispatchToProps(dispatch){
   return bindActionCreators({ postJob : postJob }, dispatch);
 };
 
-export default connect(mapStateToProps, matchDispatchToProps)(PostContainer);
+export default connect( mapStateToProps, matchDispatchToProps )( PostContainer );
 
 
 
