@@ -6,6 +6,7 @@ import JobDetailsPage from '../components/jobDetails/JobDetailsPage';
 
 class JobDetailsContainer extends Component{
   render(){      
+    console.log('JOBS', this.props.job)
     return(
       <div> 
         <JobDetailsPage activeJob={ this.props.activeJob } /> 
@@ -15,8 +16,7 @@ class JobDetailsContainer extends Component{
 };
 
 const mapStateToProps = (state) => {
-  let activeJob;
-  if(state.get('activeJob')) activeJob = state.get('activeJob').toJS();
+  let activeJob = state.get('activeJob').toJS();
   return { activeJob };
 };
 

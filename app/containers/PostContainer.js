@@ -64,8 +64,7 @@ class PostContainer extends Component {
 };
 
 const mapStateToProps = (state) => {
-  let jobs;
-  if(state.get('jobList')) jobs = state.get('jobList').toJS();
+  let jobs = state.get('jobList').toJS();
   return { jobs };
 };
 
