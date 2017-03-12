@@ -1,13 +1,14 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
+import { List, Map } from 'immutable';
+
 import * as constants from '../constants/constants';
 
- function jobs(state = [], action) {
+const init = List();
+  
+function jobs(state = init, action) {
   switch (action.type){
     case constants.POST_JOB:
-      return [
-        ...state,
-        action.payload
-      ]
+      return state.update(jobs => jobs.push(Map(action.payload)));
     default:
       return state;
   }
