@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './jobDetails.css';
 
-function JobDetails (props){
+const JobDetails = (props) => {
   const job = props.activeJob;
   
   return(
