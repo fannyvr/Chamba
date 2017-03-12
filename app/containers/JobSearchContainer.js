@@ -29,7 +29,9 @@ class JobSearchContainer extends Component{
 };
 
 function mapStateToProps(state){
-  return { jobs: state.jobs };
+  let jobs;
+  if(state.get('jobs')) jobs = state.get('jobs').toJS();
+  return { jobs };
 };
 
 function matchDispatchToProps(dispatch){
