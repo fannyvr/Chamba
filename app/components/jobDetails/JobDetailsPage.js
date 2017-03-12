@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './jobDetails.css';
 
 function JobDetails (props){
-  const job = props.clickedJobOnSearch;
+  const job = props.activeJob;
   
   return(
     <div>

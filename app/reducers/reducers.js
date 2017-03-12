@@ -4,7 +4,7 @@ import { List, Map } from 'immutable';
 import * as constants from '../constants/constants';
 
   
-function jobs(state = List(), action) {
+function jobList(state = List(), action) {
   switch (action.type){
     case constants.POST_JOB:
       return state.update(jobs => jobs.push(Map(action.payload)));
@@ -13,7 +13,7 @@ function jobs(state = List(), action) {
   }
 };
 
-function clickedJobOnSearch(state = Map(), action){
+function activeJob(state = Map(), action){
   switch(action.type){
     case constants.CLICKED_JOB:
       return state.merge(action.payload);
@@ -23,8 +23,8 @@ function clickedJobOnSearch(state = Map(), action){
 };
 
 const allReducers = combineReducers({
-  jobs,
-  clickedJobOnSearch
+  jobList,
+  activeJob
 });
 
 export default allReducers;

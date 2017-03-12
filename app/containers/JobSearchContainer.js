@@ -30,7 +30,7 @@ class JobSearchContainer extends Component{
 
 function mapStateToProps(state){
   let jobs;
-  if(state.get('jobs')) jobs = state.get('jobs').toJS();
+  if(state.get('jobList')) jobs = state.get('jobList').toJS();
   return { jobs };
 };
 

@@ -5,21 +5,19 @@ import JobDetailsPage from '../components/jobDetails/JobDetailsPage';
 
 
 class JobDetailsContainer extends Component{
-  render(){
-    const job = this.props.clickedJobOnSearch;
-      
+  render(){      
     return(
       <div> 
-        <JobDetailsPage clickedJobOnSearch={job} /> 
+        <JobDetailsPage activeJob={ this.props.activeJob } /> 
       </div>
     );
   }
 };
 
 function mapStateToProps(state){
-  let clickedJobOnSearch;
-  if(state.get('clickedJobOnSearch')) clickedJobOnSearch = state.get('clickedJobOnSearch').toJS();
-  return { clickedJobOnSearch };
+  let activeJob;
+  if(state.get('activeJob')) activeJob = state.get('activeJob').toJS();
+  return { activeJob };
 };
 
 
