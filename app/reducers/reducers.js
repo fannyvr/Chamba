@@ -3,9 +3,8 @@ import { List, Map } from 'immutable';
 
 import * as constants from '../constants/constants';
 
-const init = List();
   
-function jobs(state = init, action) {
+function jobs(state = List(), action) {
   switch (action.type){
     case constants.POST_JOB:
       return state.update(jobs => jobs.push(Map(action.payload)));
@@ -14,11 +13,10 @@ function jobs(state = init, action) {
   }
 };
 
-
-function clickedJobOnSearch(state = {}, action){
+function clickedJobOnSearch(state = Map(), action){
   switch(action.type){
     case constants.CLICKED_JOB:
-      return action.payload
+      return state.merge(action.payload);
     default: 
       return state;
   }
