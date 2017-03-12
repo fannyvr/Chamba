@@ -63,13 +63,15 @@ class PostContainer extends Component {
   }
 };
 
-function mapStateToProps(state){
-  return { jobs : state.jobs };
+const mapStateToProps = (state) => {
+  let jobs;
+  if(state.get('jobList')) jobs = state.get('jobList').toJS();
+  return { jobs };
 };
 
-function matchDispatchToProps(dispatch){
-  return bindActionCreators({ postJob : postJob }, dispatch);
-};
+const matchDispatchToProps = (dispatch) =>
+  bindActionCreators({ postJob : postJob }, dispatch);
+
 
 export default connect( mapStateToProps, matchDispatchToProps )( PostContainer );
 

@@ -30,14 +30,13 @@ class MyPostsContainer extends Component{
   };
 };
 
-function mapStateToProps(state){
+const mapStateToProps = (state) => {
   let jobs;
   if(state.get('jobList')) jobs = state.get('jobList').toJS();
-  return { jobs }
+  return { jobs };
 };
 
-function matchDispatchToProps(dispatch){
-  return bindActionCreators({ clickedJob: clickedJob }, dispatch)
-}
+const matchDispatchToProps = (dispatch) => 
+  bindActionCreators({ clickedJob: clickedJob }, dispatch);
 
 export default connect( mapStateToProps, matchDispatchToProps )( MyPostsContainer );
