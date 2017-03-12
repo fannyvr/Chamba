@@ -17,7 +17,10 @@ class JobDetailsContainer extends Component{
 };
 
 function mapStateToProps(state){
-  return { clickedJobOnSearch: state.clickedJobOnSearch };
+  let clickedJobOnSearch;
+  if(state.get('clickedJobOnSearch')) clickedJobOnSearch = state.get('clickedJobOnSearch').toJS();
+  return { clickedJobOnSearch };
 };
+
 
 export default connect( mapStateToProps )( JobDetailsContainer );
