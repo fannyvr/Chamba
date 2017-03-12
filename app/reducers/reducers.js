@@ -4,19 +4,19 @@ import { List, Map } from 'immutable';
 import * as constants from '../constants/constants';
 
   
-function jobList(state = List(), action) {
+const jobList = (state = List(), action) => {
   switch (action.type){
     case constants.POST_JOB:
-      return state.update(jobs => jobs.push(Map(action.payload)));
+      return state.update( jobs => jobs.push( Map( action.payload )));
     default:
       return state;
   }
 };
 
-function activeJob(state = Map(), action){
+const activeJob = (state = Map(), action) => {
   switch(action.type){
     case constants.CLICKED_JOB:
-      return state.merge(action.payload);
+      return state.merge( action.payload );
     default: 
       return state;
   }
