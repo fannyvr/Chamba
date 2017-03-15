@@ -6,7 +6,6 @@ import JobDetailsPage from '../components/jobDetails/JobDetailsPage';
 
 class JobDetailsContainer extends Component{
   render(){      
-    console.log('JOBS', this.props.job)
     return(
       <div> 
         <JobDetailsPage activeJob={ this.props.activeJob } /> 
