@@ -1,7 +1,7 @@
 import { List, Map, fromJS } from 'immutable';
 
-import * as types from '../app/constants/constants';
-import * as reducer from '../app/reducers/reducers';
+import * as types from '../../app/constants/constants';
+import * as reducer from '../../app/reducers/reducers';
 
 const payload = {
   title:'Need Cook!',
