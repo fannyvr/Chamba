@@ -13,7 +13,6 @@ const payload = {
 };
 
 describe('actions', () => {
-
   it('should create an action to add a job', () => {
     const action = actions.postJob(payload);
     const expectedAction = { 

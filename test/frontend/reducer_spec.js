@@ -15,14 +15,12 @@ const payload = {
 };
 
 describe('reducer', () => {
-
   it('adds a new job: POST_JOB ', () => {
     const initState = List();
     const action = { type: types.POST_JOB, payload: payload };
     const nextState = reducer.jobList(initState, action);
     
     expect(nextState).to.equal(fromJS([ payload ]));
-    
   });
 
   it('sets the clicked on job: CLICKED_JOB ', () => {
