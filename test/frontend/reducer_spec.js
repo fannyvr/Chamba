@@ -1,4 +1,5 @@
 import { List, Map, fromJS } from 'immutable';
+import { expect } from 'chai'; 
 
 import * as types from '../../app/constants/constants';
 import * as reducer from '../../app/reducers/reducers';
@@ -15,19 +16,20 @@ const payload = {
 
 describe('reducer', () => {
 
-  it('handles POST_JOB', () => {
+  it('adds a new job: POST_JOB ', () => {
     const initState = List();
     const action = { type: types.POST_JOB, payload: payload };
     const nextState = reducer.jobList(initState, action);
-  
-    nextState.should.equal(fromJS( [ payload ] ));
+    
+    expect(nextState).to.equal(fromJS([ payload ]));
+    
   });
 
-  it('handles CLICKED_JOB', () => {
+  it('sets the clicked on job: CLICKED_JOB ', () => {
     const initState = Map();
     const action = { type: types.CLICKED_JOB, payload: payload };
     const nextState = reducer.activeJob(initState, action);
 
-    nextState.should.equal(fromJS( payload ));
+    expect(nextState).to.equal(fromJS( payload ));
   });
 });
