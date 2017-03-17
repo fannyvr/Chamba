@@ -3,7 +3,7 @@ A web app to search/publish jobs in Spanish
 
 ### Getting Started
 
-**Step 1**. Make sure that you have Node.js (https://nodejs.org/) v6 or newer installed on your machine.
+**Step 1**. Make sure that you have [Node.js](https://nodejs.org/) v6 or newer installed on your machine.
 
 **Step 2**. Clone this repository.
 
@@ -24,7 +24,7 @@ You can also test your app in release (production) mode by running `npm run webs
 
 ### How to run Test
 
-The unit tests are powered by chai (http://chaijs.com/) and mocha (http://mochajs.org/).
+The unit tests are powered by [chai](http://chaijs.com/) and [mocha](http://mochajs.org/).
 
 ```shell
 $ npm run test                  # Run unit tests
