@@ -2,11 +2,10 @@ import koa from 'koa';
 import spa from 'koa-spa';
 import path from 'path';
 import mongoose from 'mongoose';
+import jobController from './controllers/jobController';
 
 let app = koa();
 
-
-//CONECTION
 mongoose.connect('mongodb://localhost/chamba');
 
 app.use(spa(path.join(__dirname, '../dist'),{
