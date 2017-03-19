@@ -11,7 +11,7 @@ const MyPosts = (props) => (
             key={ index } 
             onClick={ () => props.onClick(job) }
         > 
-          { job.title } 
+          { job.title } {job.date}
         </li> ))
       }
     </ul>
