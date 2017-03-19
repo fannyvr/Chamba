@@ -10,3 +10,7 @@
 .searchBullet:hover{
   color: red;
 }
+
+#jobTitle{
+  list-style: none;
+}
