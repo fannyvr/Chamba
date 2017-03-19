@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import PostJobsPage from '../components/post/PostJobsPage';
 import { postJob } from '../actions/actions';
-
+const date = Date().split(' ');
 
 class PostContainer extends Component {
   constructor() {
@@ -17,7 +17,8 @@ class PostContainer extends Component {
       position: '',
       description: '',
       contact: '',
-      application: ''
+      application: '',
+      date: date[1].concat(' ', date[2])
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
@@ -26,6 +27,7 @@ class PostContainer extends Component {
 
   handleEnter(event){
     event.preventDefault();
+    
     this.props.postJob(this.state);
     browserHistory.push('/myposts');
   }
