@@ -2,21 +2,6 @@
   list-style: none;
 }
 
-.postItem{
-  padding: 10px;
-  font-size: 20px;
-  padding-top: 0;
-  padding-left: 0;
-}
-
-.postItem:hover{
-  color: blue;
-}
-
-#jobtitles{
-  list-style: none;
-}
-
 .postDate{
   padding-bottom: 10px;
   font-size: 15px;
