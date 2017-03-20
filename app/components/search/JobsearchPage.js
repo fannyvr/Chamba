@@ -1,4 +1,5 @@
 import React from 'react';
+import JobList from '../joblist/JobList';
 
 import './jobSearchPage.css';
 
@@ -9,15 +10,12 @@ const JobSearch = (props) => (
       {props.jobs.map( (job, index) => (
         <li key={index} className="date"> 
           {job.date} 
-          <ul id="jobTitle">
-            <li className="searchItem" 
-              key={index}
-              onClick={ () => props.onClick(job) } 
-            >
-              {job.title} 
-            </li> 
-          </ul>
-        </li>))
+          <JobList key={index} 
+                     onClick={props.onClick} 
+                     title={job.title}
+                     job={job} 
+            />
+        </li> ))
       }
     </ul>
   </div>
