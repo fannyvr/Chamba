@@ -2,15 +2,22 @@
   list-style: none;
 }
 
-.searchBullet{
+.searchItem{
   padding: 10px;
   font-size: 20px;
+  padding-top: 0;
+  padding-left: 0;
 }
 
-.searchBullet:hover{
+.searchItem:hover{
   color: red;
 }
 
 #jobTitle{
   list-style: none;
+}
+
+.date{
+  padding-bottom: 10px;
+  font-size: 15px;
 }
