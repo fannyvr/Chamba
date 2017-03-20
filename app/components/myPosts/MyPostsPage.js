@@ -7,9 +7,9 @@ const MyPosts = (props) => (
     <h1> My Posts </h1>
     <ul id="postsList">
       {props.jobs.map( (job, index) => (
-        <li key={index} className="date"> 
+        <li key={index} className="postDate"> 
           {job.date} 
-          <ul id="jobTitle">
+          <ul id="title">
             <li className="postItem" 
               key={index}
               onClick={ () => props.onClick(job) } 
