@@ -1,22 +1,19 @@
 import React from 'react';
-
+import JobList from '../joblist/JobList';
 import './myPostsPage.css';
 
 const MyPosts = (props) => (
   <div>
     <h1> My Posts </h1>
     <ul id="postsList">
-      {props.jobs.map( (job, index) => (
-        <li key={index} className="postDate"> 
+      { props.jobs.map( (job, index) => (
+         <li key={index} className="postDate"> 
           {job.date} 
-          <ul id="jobtitles">
-            <li className="postItem" 
-              key={index}
-              onClick={ () => props.onClick(job) } 
-            >
-              {job.title} 
-            </li> 
-          </ul>
+          <JobList key={index} 
+                   onClick={props.onClick} 
+                   title={job.title}
+                   job={job} 
+          />
         </li>))
       }
     </ul>
