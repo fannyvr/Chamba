@@ -10,3 +10,12 @@
 .postItem:hover{
   color: blue;
 }
+
+#title{
+  list-style: none;
+}
+
+.postDate{
+  padding-bottom: 10px;
+  font-size: 15px;
+}
