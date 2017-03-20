@@ -10,7 +10,7 @@ const JobSearch = (props) => (
         <li key={index} className="date"> 
           {job.date} 
           <ul id="jobTitle">
-            <li className="searchBullet" 
+            <li className="searchItem" 
               key={index}
               onClick={ () => props.onClick(job) } 
             >
