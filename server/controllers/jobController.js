@@ -1,12 +1,15 @@
 import Job from '../models/job';
+import parse from 'co-body'
 
-const job = Job({
-  title: 'NEED COOK!',
-  position: 'cook',
-  salary: '10'
-});
+export default function* job(){
+  const data = yield parse(this);
+  const job = new Job(data);
 
-job.save(function(err){
-  if(err) throw err;
-  console.log('job created!')
-});
+  job.save(function(err){
+    if(err) throw err;
+    console.log('job created!')
+  });
+  
+  this.status = 200;
+}
+
