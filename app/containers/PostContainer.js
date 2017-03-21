@@ -31,9 +31,11 @@ class PostContainer extends Component {
 
   handleEnter(event){
     event.preventDefault();
+    
     axios.post('/api/postjobs', this.state)
     .then(function(res){console.log(res)})
     .catch(function(err){console.log(err)})
+
     this.props.postJob(this.state);
     browserHistory.push('/myposts');
   }
