@@ -13,3 +13,12 @@
   list-style: none;
   padding-left: 40px;
 }
+
+#list{
+  list-style: none;
+}
+
+.date{
+  padding-bottom: 10px;
+  font-size: 15px;
+}
