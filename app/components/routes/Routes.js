@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory  } from 'react-router';
 
-import App from '../app/App';
+import AppContainer from '../../containers/AppContainer';
 import SigninPage from '../signin/signinPage';
 import MyPostsContainer from '../../containers/MyPostsContainer';
 import JobDetailsContainer from '../../containers/JobDetailsContainer';
@@ -21,7 +21,7 @@ const logout = () => {
 
 const routes = (
   <Router history={ browserHistory } >
-    <Route path="/" component={ App } >
+    <Route path="/" component={ AppContainer } >
     <IndexRoute component={ JobsearchContainer } />
     <Route path="/login" component={ SigninPage } />
     <Route path="/logout" component={ SigninPage } onEnter={ logout } />
