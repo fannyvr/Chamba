@@ -1,5 +1,7 @@
 import parse from 'co-body';
-const router = require('koa-router')();
+import koaRouter from 'koa-router';
+const router = koaRouter();
+
 import job from '../controllers/jobController'
 
 const routes = (app) => {
