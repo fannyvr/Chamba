@@ -7,10 +7,6 @@ import PostJobsPage from '../components/post/PostJobsPage';
 import { postJob } from '../actions/actions';
 const date = Date().split(' ');
 
-import axios from 'axios';
-
-
-
 class PostContainer extends Component {
   constructor() {
     super();
@@ -31,10 +27,6 @@ class PostContainer extends Component {
 
   handleEnter(event){
     event.preventDefault();
-    
-    axios.post('/api/postjobs', this.state)
-    .then(function(res){console.log(res)})
-    .catch(function(err){console.log(err)})
 
     this.props.postJob(this.state);
     browserHistory.push('/myposts');
