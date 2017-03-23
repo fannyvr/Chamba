@@ -1,7 +1,7 @@
 import Job from '../models/job';
 import parse from 'co-body'
 
-export default function* job(){
+export function* job(){
   const data = yield parse(this);
   const job = new Job(data);
 
@@ -13,3 +13,7 @@ export default function* job(){
   this.status = 200;
 }
 
+export function* getJobs(){
+  this.body =  yield Job.find({}).exec(); 
+  this.status = 200
+};
