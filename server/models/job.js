@@ -8,7 +8,8 @@ const jobSchema = new Schema({
   category: String,
   description: String,
   contact: String,
-  application: String
+  application: String,
+  date: String
 });
 
 const Job = mongoose.model('Job', jobSchema);
