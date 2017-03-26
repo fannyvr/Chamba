@@ -3,7 +3,7 @@ import thunkMiddleware from 'redux-thunk';
 import { Map } from 'immutable';
 
 import allReducers  from '../reducers/reducers';
-
+import {getJobs} from '../actions/actions'
 
 let store = createStore(
   allReducers,
@@ -14,5 +14,5 @@ let store = createStore(
   )
 );
 
-
+store.dispatch(getJobs())
 export default store;
