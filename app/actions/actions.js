@@ -9,7 +9,6 @@ export const postJobSuccess = (job) => {
   return { type: constants.POST_JOB, payload: job };
 };
 
-
 export const postJob = (job) => {
   return (dispatch) => {
     return axios.post('/api/postjobs', job)
@@ -17,7 +16,6 @@ export const postJob = (job) => {
       .catch((err) => {console.log(err)});
   };
 }; 
-
 
 export const getJobsSuccess = (jobs) => {
   return { type: constants.GET_JOBS, payload: jobs};
