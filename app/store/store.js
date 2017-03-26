@@ -14,5 +14,4 @@ let store = createStore(
   )
 );
 
-store.dispatch(getJobs())
 export default store;
