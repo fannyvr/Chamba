@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux-immutable';
-import { List, Map,fromJS } from 'immutable';
+import { List, Map } from 'immutable';
 
 import * as constants from '../constants/constants';
 
