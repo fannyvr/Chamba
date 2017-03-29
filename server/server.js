@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 import jobController from './controllers/jobController';
 import routes from './routes/routes';
 
-let app = koa();
+let app = new koa();
 
 mongoose.connect('mongodb://localhost/chamba');
 
