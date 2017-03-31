@@ -1,12 +1,12 @@
 import axios from 'axios';
-import * as constants from '../constants/constants';
+import * as types from '../actionTypes/actionTypes';
 
 export const clickedJob = (job) => {
-  return { type: constants.CLICKED_JOB, payload: job };
+  return { type: types.CLICKED_JOB, payload: job };
 };
 
 export const postJobSuccess = (job) => {
-  return { type: constants.POST_JOB, payload: job };
+  return { type: types.POST_JOB, payload: job };
 };
 
 export const postJob = (job) => {
@@ -18,7 +18,7 @@ export const postJob = (job) => {
 }; 
 
 export const getJobsSuccess = (jobs) => {
-  return { type: constants.GET_JOBS, payload: jobs};
+  return { type: types.GET_JOBS, payload: jobs};
 }
 
 export const getJobs = () => {
