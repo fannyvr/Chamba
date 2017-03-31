@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux-immutable';
 import { List, Map } from 'immutable';
 
-import * as constants from '../constants/constants';
+import * as types from '../actionTypes/actionTypes';
 
 export const jobList = (state = List(), action) => {
   switch (action.type){
-    case constants.POST_JOB:
+    case types.POST_JOB:
       return state.update( jobs => jobs.push( Map( action.payload )));
-    case constants.GET_JOBS:
+    case types.GET_JOBS:
       return List(action.payload.map((job) => Map(job)));
     default:
       return state;
@@ -16,7 +16,7 @@ export const jobList = (state = List(), action) => {
 
 export const activeJob = (state = Map(), action) => {
   switch(action.type){
-    case constants.CLICKED_JOB:
+    case types.CLICKED_JOB:
       return state.merge( action.payload );
     default: 
       return state;
