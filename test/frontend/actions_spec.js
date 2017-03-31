@@ -1,4 +1,4 @@
-import * as types from '../../app/constants/constants';
+import * as types from '../../app/actionTypes/actionTypes';
 import * as actions from '../../app/actions/actions';
 import { expect } from 'chai'; 
 

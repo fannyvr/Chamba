@@ -1,7 +1,7 @@
 import { List, Map, fromJS } from 'immutable';
 import { expect } from 'chai'; 
 
-import * as types from '../../app/constants/constants';
+import * as types from '../../app/actionTypes/actionTypes';
 import * as reducer from '../../app/reducers/reducers';
 
 const payload = {
