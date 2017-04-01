@@ -14,7 +14,7 @@ const payload = {
 
 describe('actions', () => {
   it('should create an action to add a job', () => {
-    const action = actions.postJob(payload);
+    const action = actions.postJobSuccess(payload);
     const expectedAction = { 
       type: types.POST_JOB, 
       payload 
