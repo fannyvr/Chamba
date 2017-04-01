@@ -19,12 +19,12 @@ export const postJob = (job) => {
 
 export const getJobsSuccess = (jobs) => {
   return { type: types.GET_JOBS, payload: jobs};
-}
+};
 
 export const getJobs = () => {
   return (dispatch) => {
     return axios.get('/api/searchjobs')
       .then((res) => {dispatch(getJobsSuccess(res.data))})
       .catch((err) => {console.log(err)})
-  }
-}
+  };
+};
