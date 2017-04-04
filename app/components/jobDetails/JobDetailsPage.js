@@ -3,39 +3,39 @@ import React, { Component } from 'react';
 import './jobDetails.css';
 
 const JobDetails = (props) => {
-  const job = props.activeJob;
+  const { title, position, salary, category, description, contact, application } = props.activeJob;
   
   return(
     <div>
       <div id="title"> 
-        { job.title } 
+        { title } 
       </div>
       <div className="detail"> 
         <b> Position: </b> <br/> 
-        { job.position } 
+        { position } 
       </div>
       <div className="detail"> 
         <b> Salary: </b> <br/> 
-        { job.salary } 
+        { salary } 
       </div>
-      { job.category.length > 0 && 
+      { category.length > 0 && 
         <div className="detail"> 
           <b> Category: </b> <br/> 
-          { job.category } 
+          { category } 
         </div> 
       }
       <div id="jdescription"> 
         <b> Description: </b> <br/> 
-        { job.description } 
+        { description } 
       </div>
       <div className="detail"> 
         <b> Contact: </b> <br/> 
-        { job.contact } 
+        { contact } 
       </div>
-      { job.application.length > 0 && 
+      { application.length > 0 && 
         <div className="detail"> 
           <b> Application: </b> <br/> 
-          { job.application } 
+          { application } 
         </div> 
       }
     </div>
