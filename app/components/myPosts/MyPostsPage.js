@@ -1,13 +1,16 @@
 import React from 'react';
 import JobList from '../joblist/JobList';
 
-const MyPosts = (props) => (
-  <div>
-    <h1> My Posts </h1>
-    <JobList jobs={props.jobs} 
-             onClick={props.onClick}
-    />
-  </div>
-);
+const MyPosts = (props) => {
+  const { jobs, onClick } = props;
+  return(
+    <div>
+      <h1> My Posts </h1>
+      <JobList jobs={jobs} 
+               onClick={onClick}
+      />
+    </div>
+  );
+};
 
 export default MyPosts;
