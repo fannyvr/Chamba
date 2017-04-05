@@ -23,9 +23,22 @@ export const activeJob = (state = Map(), action) => {
   }
 };
 
+export const isAuth = (state = Map({ loggedIn: false }), action) => {
+  switch(action.type){
+    case types.LOGIN_SUCCESS:
+      return state.merge( action.payload );
+    case types.LOGOUT_SUCCESS:
+      return state.merge( action.payload )
+    default:
+      return state;
+  }
+}
+
+
 const allReducers = combineReducers({
   jobList,
-  activeJob
+  activeJob,
+  isAuth,
 });
 
 export default allReducers;
