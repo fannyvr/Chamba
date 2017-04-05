@@ -18,7 +18,7 @@ export const postJob = (job) => {
 }; 
 
 export const getJobsSuccess = (jobs) => {
-  return { type: types.GET_JOBS, payload: jobs};
+  return { type: types.GET_JOBS, payload: jobs };
 };
 
 export const getJobs = () => {
@@ -27,4 +27,12 @@ export const getJobs = () => {
       .then((res) => {dispatch(getJobsSuccess(res.data))})
       .catch((err) => {console.log(err)})
   };
+};
+
+export const logInSuccess = (loggedIn) => {
+  return {type: types.LOGIN_SUCCESS, payload: loggedIn };
+};
+
+export const logOutSuccess = (loggedIn) => {
+  return { type: types.LOGOUT_SUCCESS, payload: loggedIn };
 };
