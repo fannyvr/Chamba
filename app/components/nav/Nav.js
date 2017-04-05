@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 
-import auth from '../../utils/authInstance';
 import './nav.css';
 
-
-const Nav = (props) => (
-  <div className="nav"> 
-    <button to="/searchjobs" className="link"> Buscar </button>
-    <button to="/postjobs" className="link"> Publicar </button>
-    { auth.loggedIn() && <button className="link"> Mis Publicados </button> }
-    { !auth.loggedIn() && <button id="login" className="link"> Iniciar Sesión </button> }  
-    { auth.loggedIn() && <button id="logout" className="link"> Cerrar Sesión </button> }
-  </div>
-);
+const Nav = (props) => {
+  const { toMyPosts, toLogIn, toSearch, toPost, toLogOut, loggedIn } = props;
+  return(
+    <div className="nav"> 
+      <button type="button" onClick={ toSearch } className="link"> Buscar </button>
+      <button type="button" onClick={ toPost } className="link"> Publicar </button>
+      { loggedIn && <button type="button" onClick={ toMyPosts } className="link"> Mis Publicados </button> }
+      { !loggedIn && <button type="button" onClick={ toLogIn } id="login" className="link"> Iniciar Sesión </button> }  
+      { loggedIn && <button type="button" onClick={ toLogOut } id="logout" className="link"> Cerrar Sesión </button> }
+    </div>
+  );
+};
 
 export default Nav;
