@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 
 import auth from '../../utils/authInstance';
 import './nav.css';
 
 
-const Nav = () => (
+const Nav = (props) => (
   <div className="nav"> 
-    <Link to="/searchjobs" className="link"> Buscar </Link>
-    <Link to="/postjobs" className="link"> Publicar </Link>
-    { auth.loggedIn() && <Link to="/myposts" className="link"> Mis Publicados </Link> }
-    { !auth.loggedIn() && <Link to="/login" id="login" className="link"> Iniciar Sesión </Link> }  
-    { auth.loggedIn() && <Link to="/logout" id="logout" className="link"> Cerrar Sesión </Link> }
+    <button to="/searchjobs" className="link"> Buscar </button>
+    <button to="/postjobs" className="link"> Publicar </button>
+    { auth.loggedIn() && <button className="link"> Mis Publicados </button> }
+    { !auth.loggedIn() && <button id="login" className="link"> Iniciar Sesión </button> }  
+    { auth.loggedIn() && <button id="logout" className="link"> Cerrar Sesión </button> }
   </div>
 );
-
-
 
 export default Nav;
