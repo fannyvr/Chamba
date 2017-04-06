@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 import { bindActionCreators } from 'redux';
 
 import Nav from '../components/nav/Nav';
-import { logOutSuccess } from '../actions/actions';
+import { logout } from '../actions/actions';
 
 class NavContainer extends Component{
   constructor(props){
@@ -34,7 +34,7 @@ class NavContainer extends Component{
   }
 
   handleToLogOut(){
-    this.props.logOutSuccess({ loggedIn: false });
+    this.props.logout();
     browserHistory.push('/logout');
   }
 
@@ -59,6 +59,6 @@ const mapStateToProps = (state) => {
 };
 
 const matchDispatchToProps = (dispatch) =>
-  bindActionCreators({ logOutSuccess : logOutSuccess }, dispatch);
+  bindActionCreators({ logout : logout }, dispatch);
 
 export default connect(mapStateToProps, matchDispatchToProps)(NavContainer);
