@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 import { bindActionCreators } from 'redux';
 
 import PostJobsPage from '../components/post/PostJobsPage';
-import { postJob, logInSuccess } from '../actions/actions';
+import { postJob, login } from '../actions/actions';
 const date = Date().split(' ');
 
 class PostContainer extends Component {
@@ -47,9 +47,9 @@ class PostContainer extends Component {
   }
 
   componentWillMount(){
-    const { isAuth } = this.props;
-    if(localStorage.getItem('id_token') && isAuth.loggedIn === false){
-      this.props.logInSuccess({ loggedIn: true });
+    const { loggedIn } = this.props.isAuth;
+    if(!localStorage.getItem('id_token') && loggedIn === false){
+      this.props.login();
     }
   }
 
@@ -79,7 +79,7 @@ const mapStateToProps = (state) => {
 };
 
 const matchDispatchToProps = (dispatch) =>
-  bindActionCreators({ postJob : postJob, logInSuccess: logInSuccess }, dispatch);
+  bindActionCreators({ login: login, postJob: postJob }, dispatch);
 
 
 export default connect( mapStateToProps, matchDispatchToProps )( PostContainer );
