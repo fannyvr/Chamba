@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 import { bindActionCreators } from 'redux';
 
 import Nav from '../components/nav/Nav';
-import { logout } from '../actions/actions';
+import { logout, logInSuccess } from '../actions/actions';
 
 class NavContainer extends Component{
   constructor(props){
@@ -22,7 +22,11 @@ class NavContainer extends Component{
   }
 
   handleToPost(){
-    browserHistory.push('/postjobs');
+    if(localStorage.getItem('id_token')){
+      browserHistory.push('/postjobs');
+    }else{
+      this.handleToLogIn();
+    }
   }
 
   handleToMyPosts(){
@@ -36,6 +40,13 @@ class NavContainer extends Component{
   handleToLogOut(){
     this.props.logout();
     browserHistory.push('/logout');
+  }
+
+  componentWillMount(){
+    const { loggedIn } = this.props.isAuth;
+    if(localStorage.getItem('id_token') && loggedIn === false){
+      this.props.logInSuccess({ loggedIn: true })
+    }
   }
 
   render(){
@@ -59,6 +70,6 @@ const mapStateToProps = (state) => {
 };
 
 const matchDispatchToProps = (dispatch) =>
-  bindActionCreators({ logout : logout }, dispatch);
+  bindActionCreators({ logout : logout, logInSuccess: logInSuccess }, dispatch);
 
 export default connect(mapStateToProps, matchDispatchToProps)(NavContainer);
