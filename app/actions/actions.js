@@ -1,5 +1,7 @@
 import axios from 'axios';
 import * as types from '../actionTypes/actionTypes';
+import lock from '../utils/authInstance';
+import {browserHistory} from 'react-router';
 
 export const clickedJob = (job) => {
   return { type: types.CLICKED_JOB, payload: job };
@@ -33,6 +35,35 @@ export const logInSuccess = (loggedIn) => {
   return {type: types.LOGIN_SUCCESS, payload: loggedIn };
 };
 
+export const logInFail = (loggedIn) => {
+  return { type: types.LOGIN_FAILURE, payload: loggedIn };
+};
+
 export const logOutSuccess = (loggedIn) => {
   return { type: types.LOGOUT_SUCCESS, payload: loggedIn };
 };
+
+export const login = () => {
+  return(dispatch) => { 
+    lock.on('authenticated', (authResult) => {
+      lock.getUserInfo(authResult.accessToken, (err, profile) => {
+        if(err){
+          return dispatch(logInFail({ loggedIn: false }))
+        }
+        localStorage.setItem('profile', JSON.stringify(profile));
+        localStorage.setItem('id_token', authResult.idToken);
+      })
+      browserHistory.replace('/postjobs')
+    })
+    return dispatch(logInSuccess({ loggedIn:true }))
+  }
+};
+
+export const logout = () => {
+  return(dispatch) => {
+    localStorage.removeItem('id_token');
+    localStorage.removeItem('profile');
+    return dispatch(logOutSuccess({ loggedIn: false }));
+  };
+};
+
