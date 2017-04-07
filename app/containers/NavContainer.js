@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import Nav from '../components/nav/Nav';
 import { logout, logInSuccess } from '../actions/actions';
+import { checkToken } from '../utils/middleware';
 
 class NavContainer extends Component{
   constructor(props){
@@ -44,7 +45,8 @@ class NavContainer extends Component{
 
   componentWillMount(){
     const { loggedIn } = this.props.isAuth;
-    if(localStorage.getItem('id_token') && loggedIn === false){
+
+    if( checkToken(loggedIn) ){
       this.props.logInSuccess({ loggedIn: true })
     }
   }

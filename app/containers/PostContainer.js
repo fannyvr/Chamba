@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import PostJobsPage from '../components/post/PostJobsPage';
 import { postJob, login } from '../actions/actions';
+import { noToken } from '../utils/middleware';
 const date = Date().split(' ');
 
 class PostContainer extends Component {
@@ -48,7 +49,8 @@ class PostContainer extends Component {
 
   componentWillMount(){
     const { loggedIn } = this.props.isAuth;
-    if(!localStorage.getItem('id_token') && loggedIn === false){
+    
+    if( noToken(loggedIn) ){
       this.props.login();
     }
   }
