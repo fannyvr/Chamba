@@ -18,8 +18,8 @@ export const postJobSuccess = job => {
 export const postJob = job => {
   return dispatch => {
     return axios.post( '/api/postjobs', job )
-      .then( res => dispatch( postJobSuccess(job) ))
-      .catch( err => { console.log( err ) });
+      .then( res => dispatch( postJobSuccess(job) ) )
+      .catch( err => { console.log( err ) } );
   };
 }; 
 
@@ -30,8 +30,8 @@ export const getJobsSuccess = jobs => {
 export const getJobs = () => {
   return dispatch => {
     return axios.get( '/api/searchjobs' )
-      .then( res => dispatch( getJobsSuccess( res.data ) ))
-      .catch( err => { console.log( err ) });
+      .then( res => dispatch( getJobsSuccess( res.data ) ) )
+      .catch( err => { console.log( err ) } );
   };
 };
 
@@ -51,14 +51,14 @@ export const login = () => {
     lock.on( 'authenticated', authResult => {
       lock.getUserInfo( authResult.accessToken, ( err, profile ) => {
         if( err ){
-          return dispatch( logInFail({ loggedIn: false }) );
+          return dispatch( logInFail( { loggedIn: false } ) );
         }
         localStorage.setItem( 'profile', JSON.stringify( profile ) );
         localStorage.setItem( 'id_token', authResult.idToken );
       });
       browserHistory.replace( '/postjobs' );
     });
-    return dispatch( logInSuccess({ loggedIn:true }) );
+    return dispatch( logInSuccess( { loggedIn:true } ) );
   };
 };
 
@@ -73,7 +73,7 @@ export const logout = () => {
   return dispatch => {
     localStorage.removeItem( 'id_token' );
     localStorage.removeItem( 'profile' );
-    return dispatch( logOutSuccess({ loggedIn: false }) );
+    return dispatch( logOutSuccess( { loggedIn: false } ) );
   };
 };
 
