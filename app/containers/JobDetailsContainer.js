@@ -14,8 +14,8 @@ class JobDetailsContainer extends Component{
   }
 };
 
-const mapStateToProps = (state) => {
-  let activeJob = state.get('activeJob').toJS();
+const mapStateToProps = state => {
+  let activeJob = state.get( 'activeJob' ).toJS();
   return { activeJob };
 };
 

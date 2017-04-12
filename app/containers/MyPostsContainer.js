@@ -11,12 +11,12 @@ class MyPostsContainer extends Component{
     super();
     this.state = {};
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind( this );
   }
 
-  handleClick(job){
-    this.props.clickedJob(job);
-    browserHistory.push('/jobdetails');
+  handleClick( job ){
+    this.props.clickedJob( job );
+    browserHistory.push( '/jobdetails' );
   }
 
   render(){
@@ -30,12 +30,12 @@ class MyPostsContainer extends Component{
   };
 };
 
-const mapStateToProps = (state) => {
-  let jobs = state.get('jobList').toJS();
+const mapStateToProps = state => {
+  let jobs = state.get( 'jobList' ).toJS();
   return { jobs };
 };
 
-const matchDispatchToProps = (dispatch) => 
-  bindActionCreators({ clickedJob: clickedJob }, dispatch);
+const matchDispatchToProps = dispatch => 
+  bindActionCreators( { clickedJob: clickedJob }, dispatch );
 
 export default connect( mapStateToProps, matchDispatchToProps )( MyPostsContainer );

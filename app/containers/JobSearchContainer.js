@@ -11,16 +11,16 @@ class JobSearchContainer extends Component{
   constructor(){
     super();
     this.state= {};
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind( this );
   }
 
   componentWillMount(){
     this.props.getJobs();
   }
 
-  handleClick(job){
-    this.props.clickedJob(job);
-    browserHistory.push('/jobdetails');
+  handleClick( job ){
+    this.props.clickedJob( job );
+    browserHistory.push( '/jobdetails' );
   }
 
   render(){
@@ -32,13 +32,13 @@ class JobSearchContainer extends Component{
   }
 };
 
-const mapStateToProps = (state) => {
-  let jobs = state.get('jobList').toJS();
+const mapStateToProps = state => {
+  let jobs = state.get( 'jobList' ).toJS();
   return { jobs };
 };
 
-const matchDispatchToProps = (dispatch) =>
-  bindActionCreators({ clickedJob: clickedJob, getJobs: getJobs }, dispatch);
+const matchDispatchToProps = dispatch =>
+  bindActionCreators( { clickedJob: clickedJob, getJobs: getJobs }, dispatch );
 
 export default connect( mapStateToProps, matchDispatchToProps )( JobSearchContainer );
 
