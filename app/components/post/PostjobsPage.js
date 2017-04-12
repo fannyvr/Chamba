@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './postJobsPage.css';
 
-const Post = (props) => {
+const Post = props => {
   const { onEnter, onChange, onCancel, title, position, salary, category, description, contact, application } = props;
   return(
     <div> 
       <h1>POST</h1>
-      <form onSubmit={onEnter} 
-            onChange={onChange}
+      <form onSubmit={ onEnter } 
+            onChange={ onChange }
       >
         <div className="details"> 
           Title: <br/> 
           <input type="text" 
                  name="title" 
-                 value={title} 
+                 value={ title } 
                  required
           /> 
         </div>
@@ -21,14 +21,14 @@ const Post = (props) => {
           Category: <br/>
           <input type="text" 
                  name="category" 
-                 value={category} 
+                 value={ category } 
           />  
         </div>
         <div className="details"> 
           Hourly Salary: <br/> 
           <input type="text" 
                  name="salary" 
-                 value={salary} 
+                 value={ salary } 
                  required
           /> 
         </div>
@@ -36,7 +36,7 @@ const Post = (props) => {
           Position: <br/> 
           <input type="text" 
                  name="position" 
-                 value={position} 
+                 value={ position } 
                  required
           />  
         </div>
@@ -44,7 +44,7 @@ const Post = (props) => {
           Description: <br/> 
           <textarea type="text" 
                     name="description" 
-                    value={description} 
+                    value={ description } 
                     required
           /> 
         </div>
@@ -52,7 +52,7 @@ const Post = (props) => {
           Contact Info: <br/> 
           <input type="text" 
                  name="contact" 
-                 value={contact} 
+                 value={ contact } 
                  required
           /> 
         </div>
@@ -60,7 +60,7 @@ const Post = (props) => {
           Aplication: <br/> 
           <input type="text" 
                  name="application"  
-                 value={application} 
+                 value={ application } 
           /> 
         </div>
         
@@ -71,7 +71,7 @@ const Post = (props) => {
         </button>
         <button type="button" 
                 className="cancelButton" 
-                onClick={onCancel}
+                onClick={ onCancel }
         > 
           Cancel 
         </button>

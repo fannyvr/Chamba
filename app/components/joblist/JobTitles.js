@@ -2,7 +2,7 @@ import React from 'react';
 
 import './joblist.css';
 
-const JobTitles = (props) => {
+const JobTitles = props => {
   const { index, onClick, job, title } = props;
   return ( 
     <ul id="jobList">
@@ -10,7 +10,7 @@ const JobTitles = (props) => {
           key={ index }
           onClick={ () => onClick(job) } 
       >
-        {title} 
+        { title } 
       </li> 
     </ul>
   );

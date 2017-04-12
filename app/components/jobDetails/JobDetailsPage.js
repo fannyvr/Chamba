@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './jobDetails.css';
 
-const JobDetails = (props) => {
+const JobDetails = props => {
   const { title, position, salary, category, description, contact, application } = props.activeJob;
   
   return(
