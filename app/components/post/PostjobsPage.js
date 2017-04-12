@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './postJobsPage.css';
 
 const Post = props => {
@@ -10,7 +11,7 @@ const Post = props => {
             onChange={ onChange }
       >
         <div className="details"> 
-          Title: <br/> 
+          Título: <br/> 
           <input type="text" 
                  name="title" 
                  value={ title } 
@@ -18,14 +19,14 @@ const Post = props => {
           /> 
         </div>
         <div className="details"> 
-          Category: <br/>
+          Categoría: <br/>
           <input type="text" 
                  name="category" 
                  value={ category } 
           />  
         </div>
         <div className="details"> 
-          Hourly Salary: <br/> 
+          Salario: <br/> 
           <input type="text" 
                  name="salary" 
                  value={ salary } 
@@ -33,7 +34,7 @@ const Post = props => {
           /> 
         </div>
         <div className="details"> 
-          Position: <br/> 
+          Posición: <br/> 
           <input type="text" 
                  name="position" 
                  value={ position } 
@@ -41,7 +42,7 @@ const Post = props => {
           />  
         </div>
         <div id="description"> 
-          Description: <br/> 
+          Descripción: <br/> 
           <textarea type="text" 
                     name="description" 
                     value={ description } 
@@ -49,7 +50,7 @@ const Post = props => {
           /> 
         </div>
         <div className="details"> 
-          Contact Info: <br/> 
+          Contacto: <br/> 
           <input type="text" 
                  name="contact" 
                  value={ contact } 
@@ -57,7 +58,7 @@ const Post = props => {
           /> 
         </div>
         <div className="details"> 
-          Aplication: <br/> 
+          Solicitud: <br/> 
           <input type="text" 
                  name="application"  
                  value={ application } 
@@ -67,13 +68,13 @@ const Post = props => {
         <button type="submit" 
                 className="postButton" 
         > 
-          Post 
+          Publicar 
         </button>
         <button type="button" 
                 className="cancelButton" 
                 onClick={ onCancel }
         > 
-          Cancel 
+          Cancelar
         </button>
       </form>
     </div>
