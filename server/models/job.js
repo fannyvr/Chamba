@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+
 const Schema = mongoose.Schema;
 
 const jobSchema = new Schema({
@@ -12,6 +13,6 @@ const jobSchema = new Schema({
   date: String
 });
 
-const Job = mongoose.model('Job', jobSchema);
+const Job = mongoose.model( 'Job', jobSchema );
 
 export default Job;
