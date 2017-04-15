@@ -36,6 +36,20 @@ export const getJobs = () => {
 };
 
 /*
+  user
+*/
+export const getUser = ( user ) => {
+  return dispatch => {
+    return axios.post( '/api/user', user )
+      .then( res => { 
+        console.log( 'Response', res ); 
+        dispatch( logInSuccess( { loggedIn: true } ) ); 
+      } )
+      .catch( err => console.log( err ) )
+  };
+};
+
+/*
   login
 */
 export const logInSuccess = loggedIn  => {
@@ -55,10 +69,10 @@ export const login = () => {
         }
         localStorage.setItem( 'profile', JSON.stringify( profile ) );
         localStorage.setItem( 'id_token', authResult.idToken );
+        return dispatch( getUser( profile ) );
       });
       browserHistory.replace( '/postjobs' );
     });
-    return dispatch( logInSuccess( { loggedIn:true } ) );
   };
 };
 
