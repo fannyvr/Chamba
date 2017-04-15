@@ -1,8 +1,7 @@
 import Job from '../models/job';
-import parse from 'co-body';
 
 export const job = async ( ctx, next ) => {
-  const data = await parse( ctx );
+  const data = ctx.request.body;
   const job = new Job( data );
 
   job.save( err => {
