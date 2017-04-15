@@ -1,11 +1,14 @@
 import koaJwt from 'koa-jwt';
 import dotenv from 'dotenv'; 
-dotenv.config();
-import parse from 'co-body';
 import koaRouter from 'koa-router';
+import koaParse from 'koa-body';
+
+dotenv.config();
 const router = koaRouter();
+const parse = koaParse();
 
 import { job, getJobs } from '../controllers/jobController';
+import { setUser } from '../controllers/userController';
 
 const routes = app => {
   app.use( router.routes() );
@@ -15,8 +18,9 @@ const routes = app => {
   audience:  process.env.AUTH0_CLIENT_ID
 });
 
-  router.post( '/api/postjobs', job );
+  router.post( '/api/postjobs', parse, job );
   router.get( '/api/searchjobs', getJobs );
+  router.post( '/api/user', parse, setUser )
 
 };
 
