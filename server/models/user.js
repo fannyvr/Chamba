@@ -3,7 +3,11 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const userSchema = Schema({
+  email: String,
   name: String,
+  picture: String,
+  nickname: String,
+  userId: String,
   jobs: Array
 });
 
