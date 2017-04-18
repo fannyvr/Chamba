@@ -42,8 +42,7 @@ export const getUser = ( user ) => {
   return dispatch => {
     return axios.post( '/api/user', user )
       .then( res => { 
-        console.log( 'Response', res );
-        dispatch( logInSuccess( { loggedIn: true } ) ); 
+        dispatch( logInSuccess( { loggedIn: true, user: res.data } ) ); 
       } )
       .catch( err => console.log( err ) )
   };
@@ -65,7 +64,7 @@ export const login = () => {
     lock.on( 'authenticated', authResult => {
       lock.getUserInfo( authResult.accessToken, ( err, profile ) => {
         if( err ){
-          return dispatch( logInFail( { loggedIn: false } ) );
+          return dispatch( logInFail( { loggedIn: false, user: null } ) );
         }
         localStorage.setItem( 'id_token', authResult.idToken );
         localStorage.setItem( 'user_id', profile.identities[0].user_id  )
@@ -86,9 +85,8 @@ export const logOutSuccess = loggedIn => {
 export const logout = () => {
   return dispatch => {
     localStorage.removeItem( 'id_token' );
-    localStorage.removeItem( 'profile' );
     localStorage.removeItem( 'user_id' );
-    return dispatch( logOutSuccess( { loggedIn: false } ) );
+    return dispatch( logOutSuccess( { loggedIn: false, user: null } ) );
   };
 };
 
