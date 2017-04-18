@@ -1,6 +1,6 @@
 import Job from '../models/job';
 
-export const job = async ( ctx, next ) => {
+export const postJob = async ( ctx, next ) => {
   const data = ctx.request.body;
   const job = new Job( data );
 

@@ -1,6 +1,6 @@
 import User from '../models/user';
 
-export const setUser = async ( ctx, next ) => {
+export const getUser = async ( ctx, next ) => {
   const { email, name, picture, nickname, identities } = ctx.request.body;
   const user = {
     name: name,

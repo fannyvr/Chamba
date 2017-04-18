@@ -7,8 +7,8 @@ dotenv.config();
 const router = koaRouter();
 const parse = koaParse();
 
-import { job, getJobs } from '../controllers/jobController';
-import { setUser } from '../controllers/userController';
+import { postJob, getJobs } from '../controllers/jobController';
+import { getUser } from '../controllers/userController';
 
 const routes = app => {
   app.use( router.routes() );
@@ -18,9 +18,9 @@ const routes = app => {
   audience:  process.env.AUTH0_CLIENT_ID
 });
 
-  router.post( '/api/postjobs', parse, job );
+  router.post( '/api/postjobs', parse, postJob );
   router.get( '/api/searchjobs', getJobs );
-  router.post( '/api/user', parse, setUser )
+  router.post( '/api/user', parse, getUser )
 
 };
 
