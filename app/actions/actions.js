@@ -42,7 +42,7 @@ export const getUser = ( user ) => {
   return dispatch => {
     return axios.post( '/api/user', user )
       .then( res => { 
-        console.log( 'Response', res ); 
+        console.log( 'Response', res );
         dispatch( logInSuccess( { loggedIn: true } ) ); 
       } )
       .catch( err => console.log( err ) )
@@ -67,8 +67,8 @@ export const login = () => {
         if( err ){
           return dispatch( logInFail( { loggedIn: false } ) );
         }
-        localStorage.setItem( 'profile', JSON.stringify( profile ) );
         localStorage.setItem( 'id_token', authResult.idToken );
+        localStorage.setItem( 'user_id', profile.identities[0].user_id  )
         return dispatch( getUser( profile ) );
       });
       browserHistory.replace( '/postjobs' );
@@ -87,6 +87,7 @@ export const logout = () => {
   return dispatch => {
     localStorage.removeItem( 'id_token' );
     localStorage.removeItem( 'profile' );
+    localStorage.removeItem( 'user_id' );
     return dispatch( logOutSuccess( { loggedIn: false } ) );
   };
 };
