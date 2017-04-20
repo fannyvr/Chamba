@@ -1,17 +1,17 @@
 import User from '../models/user';
 
 export const getUser = async ( ctx, next ) => {
-  const { email, name, picture, nickname, identities } = ctx.request.body;
+  const { email, name, picture, nickname, identities, userId } = ctx.request.body;
   const user = {
     name: name,
     email: email,
     picture: picture,
     nickname: nickname,
-    userId: identities[0].user_id
+    userId: userId || identities[0].user_id
   };
 
   try{
-    let gotUser = await User.findOne( { email: email } );
+    let gotUser = await User.findOne( { userId: user.userId } );
     
     if( !gotUser ){
       const newUser = new User( user );   
