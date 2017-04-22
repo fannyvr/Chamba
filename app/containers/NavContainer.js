@@ -4,8 +4,8 @@ import { browserHistory } from 'react-router';
 import { bindActionCreators } from 'redux';
 
 import Nav from '../components/nav/Nav';
-import { logout, getUser } from '../actions/actions';
-import { checkToken } from '../utils/middleware';
+import { logout, getUser, login } from '../actions/actions';
+import { checkToken, noToken } from '../utils/middleware';
 
 class NavContainer extends Component{
   constructor( props ){
@@ -49,6 +49,9 @@ class NavContainer extends Component{
     if( checkToken( loggedIn ) ){
       this.props.getUser( { userId: localStorage.getItem( 'user_id' ) } );
     }
+    if( noToken( loggedIn ) ){
+      this.props.login();
+    }
   }
 
   render(){
@@ -72,6 +75,6 @@ const mapStateToProps = state => {
 };
 
 const matchDispatchToProps = dispatch =>
-  bindActionCreators( { logout : logout, getUser: getUser }, dispatch );
+  bindActionCreators( { login: login, logout : logout, getUser: getUser }, dispatch );
 
 export default connect( mapStateToProps, matchDispatchToProps )( NavContainer );
