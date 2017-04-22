@@ -20,7 +20,7 @@ const routes = app => {
 
   router.post( '/api/postjobs', authCheck, parse, postJob );
   router.get( '/api/searchjobs', getJobs );
-  router.post( '/api/user', parse, getUser )
+  router.post( '/api/user', authCheck, parse, getUser )
 
 };
 
