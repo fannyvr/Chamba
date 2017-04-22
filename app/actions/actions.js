@@ -44,6 +44,7 @@ export const getUser = ( user ) => {
     return axios.post( '/api/user', user )
       .then( res => { 
         dispatch( logInSuccess( { loggedIn: true, user: res.data } ) ); 
+        browserHistory.replace( '/postjobs' );
       } )
       .catch( err => console.log( err ) )
   };
@@ -71,7 +72,7 @@ export const login = () => {
         localStorage.setItem( 'user_id', profile.identities[0].user_id  )
         return dispatch( getUser( profile ) );
       });
-      browserHistory.replace( '/postjobs' );
+      
     });
   };
 };
