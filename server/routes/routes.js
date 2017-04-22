@@ -18,7 +18,7 @@ const routes = app => {
   audience:  process.env.AUTH0_CLIENT_ID
 });
 
-  router.post( '/api/postjobs', parse, postJob );
+  router.post( '/api/postjobs', authCheck, parse, postJob );
   router.get( '/api/searchjobs', getJobs );
   router.post( '/api/user', parse, getUser )
 
