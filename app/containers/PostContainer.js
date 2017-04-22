@@ -28,7 +28,7 @@ class PostContainer extends Component {
   handleEnter( event ){
     event.preventDefault();
 
-    this.props.postJob( this.state );
+    this.props.postJob( this.state, localStorage.getItem( 'user_id' ) );
     browserHistory.push( '/myposts' );
   }
 
