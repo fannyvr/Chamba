@@ -15,10 +15,10 @@ export const postJobSuccess = job => {
   return { type: types.POST_JOB, payload: job };
 };
 
-export const postJob = job => {
+export const postJob = ( job, userId ) => {
   axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem( 'id_token' );
   return dispatch => {
-    return axios.post( '/api/postjobs', job )
+    return axios.post( '/api/postjobs', { job, userId } )
       .then( res => dispatch( postJobSuccess(job) ) )
       .catch( err => { console.log( err ) } );
   };
