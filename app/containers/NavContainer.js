@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import Nav from '../components/nav/Nav';
 import { logout, getUser, login } from '../actions/actions';
-import { checkToken, noToken } from '../utils/middleware';
+import { ifToken, noToken } from '../utils/middleware';
 
 class NavContainer extends Component{
   constructor( props ){
@@ -46,7 +46,7 @@ class NavContainer extends Component{
   componentWillMount(){
     const { loggedIn } = this.props.isAuth;
 
-    if( checkToken( loggedIn ) ){
+    if( ifToken( loggedIn ) ){
       this.props.getUser( { userId: localStorage.getItem( 'user_id' ) } );
     }
     if( noToken( loggedIn ) ){

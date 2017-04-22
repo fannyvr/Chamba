@@ -10,7 +10,7 @@ export const noToken = singedOn => {
   }
 };
 
-export const checkToken = singedOn => {
+export const ifToken = singedOn => {
   if( localStorage.getItem( 'id_token' ) && !singedOn ){
     return true;
   }
