@@ -16,6 +16,7 @@ export const postJobSuccess = job => {
 };
 
 export const postJob = job => {
+  axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('id_token');
   return dispatch => {
     return axios.post( '/api/postjobs', job )
       .then( res => dispatch( postJobSuccess(job) ) )
