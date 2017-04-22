@@ -40,6 +40,7 @@ export const getJobs = () => {
   user
 */
 export const getUser = ( user ) => {
+  axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('id_token');
   return dispatch => {
     return axios.post( '/api/user', user )
       .then( res => { 
@@ -72,7 +73,6 @@ export const login = () => {
         localStorage.setItem( 'user_id', profile.identities[0].user_id  )
         return dispatch( getUser( profile ) );
       });
-      
     });
   };
 };
