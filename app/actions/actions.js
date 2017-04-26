@@ -5,12 +5,15 @@ import * as types from '../actionTypes/actionTypes';
 import lock from '../utils/authInstance';
 
 /* 
-  jobs 
+  active job 
 */
 export const clickedJob = job => {
   return { type: types.CLICKED_JOB, payload: job };
 };
 
+/* 
+  post job 
+*/
 export const postJobSuccess = job => {
   return { type: types.POST_JOB, payload: job };
 };
@@ -24,6 +27,9 @@ export const postJob = ( job, userId ) => {
   };
 }; 
 
+/*
+  load search list
+*/
 export const getJobsSuccess = jobs => {
   return { type: types.GET_JOBS, payload: jobs };
 };
