@@ -17,13 +17,16 @@ export const clickedJob = job => {
 export const postJobSuccess = job => {
   return { type: types.POST_JOB, payload: job };
 };
+export const postJobFailed = err => {
+  return { type: types.POSTJOB_FAILED, payload: err };
+}; 
 
 export const postJob = ( job, userId ) => {
   axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem( 'id_token' );
   return dispatch => {
     return axios.post( '/api/postjobs', { job, userId } )
-      .then( res => dispatch( postJobSuccess(job) ) )
-      .catch( err => { console.log( err ) } );
+      .then( res => dispatch( postJobSuccess( job ) ) )
+      .catch( err => dispatch( postJobFailed( err ) ) );
   };
 }; 
 
