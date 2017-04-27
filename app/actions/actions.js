@@ -35,7 +35,7 @@ export const postJob = ( job, userId ) => {
   load search list
 */
 export const getJobsSuccess = jobs => {
-  return { type: types.GET_JOBS, payload: jobs };
+  return { type: types.GETJOBS_SUCCESS, payload: jobs };
 };
 
 export const getJobsFailed = err => {

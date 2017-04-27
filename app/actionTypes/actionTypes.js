@@ -1,7 +1,7 @@
 /*
   jobs
 */
-export const GET_JOBS = 'GET_JOBS';
+export const GETJOBS_SUCCESS = 'GETJOBS_SUCCESS';
 export const GETJOBS_FAILED = 'GETJOBS_FAILED';
 export const POSTJOB_SUCCESS = 'POSTJOB_SUCCESS';
 export const POSTJOB_FAILED = 'POSTJOB_FAILED';

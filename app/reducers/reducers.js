@@ -7,7 +7,7 @@ export const jobList = ( state = List(), action ) => {
   switch ( action.type ){
     case types.POSTJOB_SUCCESS:
       return state.update( jobs => jobs.push( Map( action.payload ) ) );
-    case types.GET_JOBS:
+    case types.GETJOBS_SUCCESS:
       return List( action.payload.map( job  => Map( job ) ) );
     default:
       return state;
