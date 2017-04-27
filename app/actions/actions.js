@@ -38,6 +38,10 @@ export const getJobsSuccess = jobs => {
   return { type: types.GET_JOBS, payload: jobs };
 };
 
+export const getJobsFailed = err => {
+  return { type: types.GETJOBS_FAILED, payload: err };
+};
+
 export const getJobs = () => {
   return dispatch => {
     return axios.get( '/api/searchjobs' )
