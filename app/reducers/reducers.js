@@ -5,7 +5,7 @@ import * as types from '../actionTypes/actionTypes';
 
 export const jobList = ( state = List(), action ) => {
   switch ( action.type ){
-    case types.POST_JOB:
+    case types.POSTJOB_SUCCESS:
       return state.update( jobs => jobs.push( Map( action.payload ) ) );
     case types.GET_JOBS:
       return List( action.payload.map( job  => Map( job ) ) );

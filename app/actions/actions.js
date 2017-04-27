@@ -15,8 +15,9 @@ export const clickedJob = job => {
   post job 
 */
 export const postJobSuccess = job => {
-  return { type: types.POST_JOB, payload: job };
+  return { type: types.POSTJOB_SUCCESS, payload: job };
 };
+
 export const postJobFailed = err => {
   return { type: types.POSTJOB_FAILED, payload: err };
 }; 
