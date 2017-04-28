@@ -46,7 +46,7 @@ export const getJobs = () => {
   return dispatch => {
     return axios.get( '/api/searchjobs' )
       .then( res => dispatch( getJobsSuccess( res.data ) ) )
-      .catch( err => { console.log( err ) } );
+      .catch( err => dispatch( getJobsFailed( err ) ) );
   };
 };
 
