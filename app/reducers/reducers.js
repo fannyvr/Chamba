@@ -32,13 +32,24 @@ export const isAuth = ( state = Map( { loggedIn: false } ), action ) => {
     default:
       return state;
   }
-}
+};
+
+export const errorMessage = ( state = Map(), action ) => {
+  const error = action.payload.response;
+  switch( action.type ){
+    case types.POSTJOB_FAILED:
+      return state.merge( { error: error.statusText });
+    default:
+      return state;
+  }
+};
 
 
 const allReducers = combineReducers({
   jobList,
   activeJob,
   isAuth,
+  errorMessage
 });
 
 export default allReducers;
