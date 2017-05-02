@@ -53,7 +53,7 @@ class NavContainer extends Component{
       if( tokenExpired() ){
         this.props.logout();
       }else{
-        this.props.getUser( { userId: token } );
+        this.props.getUser( { userId: localStorage.getItem( 'id_token' ) } );
       }
     }
   }
