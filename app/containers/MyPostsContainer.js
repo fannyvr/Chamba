@@ -20,19 +20,27 @@ class MyPostsContainer extends Component{
   }
 
   render(){
-    return(
-      <div>
-        <MyPostsPage jobs={ this.props.jobs }
-                     onClick={ this.handleClick } 
-        />
-      </div>
-    );
+    if( this.props.dbRequest.isWorking ){
+      return(
+        <div> LOADING.... </div>
+      )
+    }else{
+      return(
+        <div>
+          <MyPostsPage jobs={ this.props.jobs }
+                       onClick={ this.handleClick } 
+          />
+        </div>
+      );
+      
+    }
   };
 };
 
 const mapStateToProps = state => {
   let jobs = state.get( 'jobList' ).toJS();
-  return { jobs };
+  let dbRequest = state.get( 'dbRequest' ).toJS();
+  return { jobs, dbRequest };
 };
 
 const matchDispatchToProps = dispatch => 
