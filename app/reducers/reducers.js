@@ -35,21 +35,32 @@ export const isAuth = ( state = Map( { loggedIn: false } ), action ) => {
 };
 
 export const errorMessage = ( state = Map(), action ) => {
-  const error = action.payload.response;
   switch( action.type ){
     case types.POSTJOB_FAILED:
-      return state.merge( { error: error.statusText });
+      return state.merge( { error: action.payload.response.statusText });
     default:
       return state;
   }
 };
 
 
+export const dbRequest = ( state = Map( { isWorking: false } ), action ) => {
+  switch( action.type ){
+    case types.DB_REQUEST:
+      return state.merge( Map( { isWorking: true } ) );
+    case types.DB_SUCCESS:
+      return state.merge( Map( { isWorking: false } ) );
+    default:
+      return state;
+  }
+};
+
 const allReducers = combineReducers({
   jobList,
   activeJob,
   isAuth,
-  errorMessage
+  errorMessage,
+  dbRequest
 });
 
 export default allReducers;
