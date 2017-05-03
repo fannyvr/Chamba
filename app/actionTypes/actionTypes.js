@@ -8,6 +8,12 @@ export const POSTJOB_FAILED = 'POSTJOB_FAILED';
 export const CLICKED_JOB = 'CLICKED_JOB';
 
 /*
+  db
+*/
+export const DB_REQUEST = 'DB_REQUEST';
+export const DB_SUCCESS = 'DB_SUCCESS';
+
+/*
   login
 */
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
