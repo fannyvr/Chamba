@@ -11,6 +11,17 @@ export const clickedJob = job => {
   return { type: types.CLICKED_JOB, payload: job };
 };
 
+/*
+  db
+*/
+export const dbRequest = () => {
+  return { type: types.DB_REQUEST };
+};
+
+export const dbSuccess = () => {
+  return { type: types.DB_SUCCESS };
+};
+
 /* 
   post job 
 */
@@ -25,8 +36,12 @@ export const postJobFailed = err => {
 export const postJob = ( job, userId ) => {
   axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem( 'id_token' );
   return dispatch => {
+    dispatch( dbRequest() );
     return axios.post( '/api/postjobs', { job, userId } )
-      .then( res => dispatch( postJobSuccess( job ) ) )
+      .then( res => { 
+        dispatch( postJobSuccess( job ) )
+        dispatch( dbSuccess() )
+      })
       .catch( err => dispatch( postJobFailed( err ) ) );
   };
 }; 
