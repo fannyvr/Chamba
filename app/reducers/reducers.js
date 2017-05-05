@@ -34,7 +34,7 @@ export const isAuth = ( state = Map( { loggedIn: false } ), action ) => {
   }
 };
 
-export const dbRequest = ( state = Map( { isWorking: false } ), action ) => {
+export const db = ( state = Map( { isWorking: false } ), action ) => {
   switch( action.type ){
     case types.DB_REQUEST:
       return state.merge( Map( { isWorking: true, error: null } ) );
@@ -51,7 +51,7 @@ const allReducers = combineReducers({
   jobList,
   activeJob,
   isAuth,
-  dbRequest
+  db
 });
 
 export default allReducers;
