@@ -22,6 +22,10 @@ export const dbSuccess = () => {
   return { type: types.DB_SUCCESS };
 };
 
+export const dbFailure = ( err ) => {
+  return { type: DB_FAILURE, payload: err };
+}; 
+
 /* 
   post job 
 */
@@ -38,7 +42,7 @@ export const postJob = ( job, userId ) => {
         dispatch( postJobSuccess( job ) )
         dispatch( dbSuccess() )
       })
-      .catch( err => dispatch( actionFailed( err ) ) );
+      .catch( err => dispatch( dbFailure( err ) ) );
   };
 }; 
 
@@ -53,15 +57,8 @@ export const getJobs = () => {
   return dispatch => {
     return axios.get( '/api/searchjobs' )
       .then( res => dispatch( getJobsSuccess( res.data ) ) )
-      .catch( err => dispatch( actionFailed( err ) ) );
+      .catch( err => dispatch( dbFailure( err ) ) );
   };
-};
-
-/*
-  error
-*/
-export const actionFailed = err => {
-  return { type: types.ACTION_FAILED, payload: err };
 };
 
 /*
