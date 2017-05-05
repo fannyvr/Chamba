@@ -34,21 +34,14 @@ export const isAuth = ( state = Map( { loggedIn: false } ), action ) => {
   }
 };
 
-export const errorMessage = ( state = Map(), action ) => {
-  switch( action.type ){
-    case types.ACTION_FAILED:
-      return state.merge( { error: action.payload.response.statusText });
-    default:
-      return state;
-  }
-};
-
 export const dbRequest = ( state = Map( { isWorking: false } ), action ) => {
   switch( action.type ){
     case types.DB_REQUEST:
-      return state.merge( Map( { isWorking: true } ) );
+      return state.merge( Map( { isWorking: true, error: null } ) );
     case types.DB_SUCCESS:
-      return state.merge( Map( { isWorking: false } ) );
+      return state.merge( Map( { isWorking: false, error: null } ) );
+    case: types.DB_FAILURE:
+      return state.merge( Map( { isWorking: false, error: action.payload.response.statusText } ) );
     default:
       return state;
   }
@@ -58,7 +51,6 @@ const allReducers = combineReducers({
   jobList,
   activeJob,
   isAuth,
-  errorMessage,
   dbRequest
 });
 
