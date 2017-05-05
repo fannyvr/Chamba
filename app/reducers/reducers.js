@@ -36,13 +36,12 @@ export const isAuth = ( state = Map( { loggedIn: false } ), action ) => {
 
 export const errorMessage = ( state = Map(), action ) => {
   switch( action.type ){
-    case types.POSTJOB_FAILED:
+    case types.ACTION_FAILED:
       return state.merge( { error: action.payload.response.statusText });
     default:
       return state;
   }
 };
-
 
 export const dbRequest = ( state = Map( { isWorking: false } ), action ) => {
   switch( action.type ){
