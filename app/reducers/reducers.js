@@ -40,7 +40,7 @@ export const db = ( state = Map( { isWorking: false } ), action ) => {
       return state.merge( Map( { isWorking: true, error: null } ) );
     case types.DB_SUCCESS:
       return state.merge( Map( { isWorking: false, error: null } ) );
-    case: types.DB_FAILURE:
+    case types.DB_FAILURE:
       return state.merge( Map( { isWorking: false, error: action.payload.response.statusText } ) );
     default:
       return state;
