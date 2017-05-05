@@ -29,10 +29,6 @@ export const postJobSuccess = job => {
   return { type: types.POSTJOB_SUCCESS, payload: job };
 };
 
-export const postJobFailed = err => {
-  return { type: types.POSTJOB_FAILED, payload: err };
-}; 
-
 export const postJob = ( job, userId ) => {
   axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem( 'id_token' );
   return dispatch => {
@@ -42,7 +38,7 @@ export const postJob = ( job, userId ) => {
         dispatch( postJobSuccess( job ) )
         dispatch( dbSuccess() )
       })
-      .catch( err => dispatch( postJobFailed( err ) ) );
+      .catch( err => dispatch( actionFailed( err ) ) );
   };
 }; 
 
@@ -53,16 +49,19 @@ export const getJobsSuccess = jobs => {
   return { type: types.GETJOBS_SUCCESS, payload: jobs };
 };
 
-export const getJobsFailed = err => {
-  return { type: types.GETJOBS_FAILED, payload: err };
-};
-
 export const getJobs = () => {
   return dispatch => {
     return axios.get( '/api/searchjobs' )
       .then( res => dispatch( getJobsSuccess( res.data ) ) )
-      .catch( err => dispatch( getJobsFailed( err ) ) );
+      .catch( err => dispatch( actionFailed( err ) ) );
   };
+};
+
+/*
+  error
+*/
+export const actionFailed = err => {
+  return { type: types.ACTION_FAILED, payload: err };
 };
 
 /*
