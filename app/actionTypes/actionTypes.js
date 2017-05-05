@@ -2,9 +2,8 @@
   jobs
 */
 export const GETJOBS_SUCCESS = 'GETJOBS_SUCCESS';
-export const GETJOBS_FAILED = 'GETJOBS_FAILED';
 export const POSTJOB_SUCCESS = 'POSTJOB_SUCCESS';
-export const POSTJOB_FAILED = 'POSTJOB_FAILED';
+export const ACTION_FAILED = 'ACTION_FAILED';
 export const CLICKED_JOB = 'CLICKED_JOB';
 
 /*
