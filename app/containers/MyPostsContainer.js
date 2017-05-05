@@ -20,7 +20,7 @@ class MyPostsContainer extends Component{
   }
 
   render(){
-    if( this.props.dbRequest.isWorking ){
+    if( this.props.db.isWorking ){
       return(
         <div> LOADING.... </div>
       )
@@ -39,8 +39,8 @@ class MyPostsContainer extends Component{
 
 const mapStateToProps = state => {
   let jobs = state.get( 'jobList' ).toJS();
-  let dbRequest = state.get( 'dbRequest' ).toJS();
-  return { jobs, dbRequest };
+  let db = state.get( 'db' ).toJS();
+  return { jobs, db };
 };
 
 const matchDispatchToProps = dispatch => 
