@@ -23,7 +23,7 @@ export const dbSuccess = () => {
 };
 
 export const dbFailure = ( err ) => {
-  return { type: DB_FAILURE, payload: err };
+  return { type: types.DB_FAILURE, payload: err };
 }; 
 
 /* 
