@@ -37,11 +37,20 @@ export const isAuth = ( state = Map( { loggedIn: false } ), action ) => {
 export const db = ( state = Map( { isWorking: false } ), action ) => {
   switch( action.type ){
     case types.DB_REQUEST:
-      return state.merge( Map( { isWorking: true, error: null } ) );
+      return state.merge( Map( { 
+          isWorking: true, 
+          error: null 
+      } ) );
     case types.DB_SUCCESS:
-      return state.merge( Map( { isWorking: false, error: null } ) );
+      return state.merge( Map( { 
+          isWorking: false, 
+          error: null 
+      } ) );
     case types.DB_FAILURE:
-      return state.merge( Map( { isWorking: false, error: action.payload.response.statusText } ) );
+      return state.merge( Map( { 
+        isWorking: false, 
+        error: action.payload.response.statusText 
+      } ) );
     default:
       return state;
   }
