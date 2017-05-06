@@ -2,8 +2,9 @@ import { combineReducers } from 'redux-immutable';
 import { List, Map } from 'immutable';
 
 import * as types from '../actionTypes/actionTypes';
+import * as initState from '../utils/initStates';
 
-export const jobList = ( state = List(), action ) => {
+export const jobList = ( state = initState.joblist, action ) => {
   switch ( action.type ){
     case types.POSTJOB_SUCCESS:
       return state.update( jobs => jobs.push( Map( action.payload ) ) );
@@ -14,7 +15,7 @@ export const jobList = ( state = List(), action ) => {
   }
 };
 
-export const activeJob = ( state = Map(), action ) => {
+export const activeJob = ( state = initState.activejob, action ) => {
   switch( action.type ){
     case types.CLICKED_JOB:
       return state.merge( action.payload );
@@ -23,7 +24,7 @@ export const activeJob = ( state = Map(), action ) => {
   }
 };
 
-export const isAuth = ( state = Map( { loggedIn: false } ), action ) => {
+export const isAuth = ( state = initState.isauth, action ) => {
   switch( action.type ){
     case types.LOGIN_SUCCESS:
       return state.merge( action.payload );
@@ -34,7 +35,7 @@ export const isAuth = ( state = Map( { loggedIn: false } ), action ) => {
   }
 };
 
-export const db = ( state = Map( { isWorking: false } ), action ) => {
+export const db = ( state = initState.db, action ) => {
   switch( action.type ){
     case types.DB_REQUEST:
       return state.merge( Map( { 
