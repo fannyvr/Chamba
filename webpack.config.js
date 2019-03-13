@@ -1,7 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
   filename: 'index.html',
@@ -9,6 +8,7 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
+  
   devtool: process.env.NODE_ENV === 'production' ? '' : 'source-map',
   entry:[
     './app/index'
@@ -19,35 +19,29 @@ module.exports = {
     filename: 'bundle.js'
   },
   module:{
-    preLoaders: [
-      {
-        test: /\.js?$/,
-        loaders: ['eslint'],
-        include: /app/
-      }
-    ],
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: [ 'react-hot/webpack', 'babel' ]
+        use: [ 'babel-loader' ]
       },
       {
         test:/\.css$/,
-        loader:'style-loader!css-loader'
+        use: ['style-loader', 'css-loader']
       }
-    ]
+    ],
   },
   resolve: {
-    extentions: [ '', '.js' ]
+    extensions: [ '.js' ]
   },
+
   devServer: {
     contentBase: './build',
     historyApiFallback: true,
     hot: true,
     inline: true,
-    progress: true,
-    colors: true
+    progress: true
+    // colors: true
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
