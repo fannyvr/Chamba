@@ -4,7 +4,8 @@ dist
 build
 *.log
 bower_components
-notes.js
-tasks.js
+notes.md
+tasks.md
 .env
 config.js
+package-lock.json
