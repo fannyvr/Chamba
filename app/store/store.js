@@ -9,7 +9,7 @@ let store = createStore(
   Map(),
   compose(
     applyMiddleware( thunkMiddleware ),
-    window.devToolsExtension ? window.devToolsExtension() : undefined
+    window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : undefined
   )
 );
 
